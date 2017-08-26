@@ -40,4 +40,12 @@ class Goods extends ActiveRecord
             'name' => 'Name',
         ];
     }
+
+    public function fields()
+    {
+        return [
+            'id',
+            'name',
+        ];
+    }
 }

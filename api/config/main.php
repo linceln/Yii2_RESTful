@@ -68,7 +68,9 @@ return [
                     'extraPatterns' => [
                         'POST login' => 'login',
                         'POST signup' => 'signup',
-                        'GET profile' => 'profile',
+                        'GET profile' => 'get-profile',
+                        'GET valid' => 'get-valid-goods',
+                        'PUT fill' => 'fill'
                     ]
                 ],
             ],

@@ -72,14 +72,14 @@ class UserController extends Controller
      * 用户资料
      * @return array
      */
-    public function actionProfile()
+    public function actionGetProfile()
     {
-        $user = $this->authenticate(Yii::$app->user, Yii::$app->request, Yii::$app->response);
+        $user = Yii::$app->user->identity;
 
         return [
-            'code' => $user ? 1 : 0,
-            'username' => $user ? $user->username : '',
-            'email' => $user ? $user->email : '',
+            'code' => 1,
+            'username' => $user->username,
+            'email' => $user->email,
         ];
     }
 

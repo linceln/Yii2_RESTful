@@ -10140,3 +10140,1236 @@ Stack trace:
     'REQUEST_TIME_FLOAT' => 1503323326.125
     'REQUEST_TIME' => 1503323326
 ]
+2017-08-22 21:14:13 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message '页面未找到。' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Request.php:195
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2017-08-22 21:14:13 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_POSTMAN_TOKEN' => '53fd4908-b38d-8d63-a8bf-6084cdb6b273'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '65292'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/valid-goods'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/valid-goods'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503407653.239
+    'REQUEST_TIME' => 1503407653
+]
+2017-08-22 21:14:55 [::1][5][-][error][yii\db\Exception] exception 'yii\base\ErrorException' with message 'Object of class Closure could not be converted to string' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/db/Command.php:282
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(4096, 'Object of class...', '/Users/lincoln/...', 282, Array)
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/db/Command.php(282): PDOStatement->bindValue(':qp0', 'Object', 2)
+#2 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/db/Command.php(226): yii\db\Command->bindPendingParams()
+#3 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/db/Command.php(910): yii\db\Command->prepare(true)
+#4 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/db/Query.php(213): yii\db\Command->queryAll()
+#6 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/db/ActiveQuery.php(135): yii\db\Query->all(NULL)
+#7 /Users/lincoln/Sites/advanced/api/modules/v1/controllers/GoodsController.php(32): yii\db\ActiveQuery->all()
+#8 [internal function]: api\modules\v1\controllers\GoodsController->actionValidGoods()
+#9 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#10 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#11 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('valid-goods', Array)
+#12 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('v1/goods/valid-...', Array)
+#13 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#15 {main}
+
+Next exception 'yii\db\Exception' with message 'Object of class Closure could not be converted to string
+Failed to prepare SQL: SELECT `name` FROM `goods` WHERE `id`=:qp0' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/db/Command.php:230
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/db/Command.php(910): yii\db\Command->prepare(true)
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/db/Query.php(213): yii\db\Command->queryAll()
+#3 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/db/ActiveQuery.php(135): yii\db\Query->all(NULL)
+#4 /Users/lincoln/Sites/advanced/api/modules/v1/controllers/GoodsController.php(32): yii\db\ActiveQuery->all()
+#5 [internal function]: api\modules\v1\controllers\GoodsController->actionValidGoods()
+#6 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#7 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#8 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('valid-goods', Array)
+#9 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('v1/goods/valid-...', Array)
+#10 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#12 {main}
+Additional Information:
+
+2017-08-22 21:14:55 [::1][5][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_POSTMAN_TOKEN' => 'e9cfa7c1-f5c7-8c48-8e3e-20918108cd1b'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '65308'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/valid-goods'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/valid-goods'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503407694.993
+    'REQUEST_TIME' => 1503407694
+]
+2017-08-22 21:40:19 [::1][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'Your request was made with invalid credentials.' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php:91
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/HttpBearerAuth.php(46): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php(61): yii\filters\auth\HttpBearerAuth->authenticate(Object(yii\web\User), Object(yii\web\Request), Object(yii\web\Response))
+#2 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/ActionFilter.php(75): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#3 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#4 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Component.php(545): call_user_func(Array, Object(yii\base\ActionEvent))
+#5 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(272): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#6 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(154): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#8 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('fill', Array)
+#9 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('v1/goods/fill', Array)
+#10 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#12 {main}
+2017-08-22 21:40:19 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_POSTMAN_TOKEN' => '8055e1e7-e069-5860-58cb-c34a59954c9b'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '49510'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/fill'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'PUT'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/fill'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503409219.228
+    'REQUEST_TIME' => 1503409219
+]
+2017-08-22 21:51:06 [::1][5][-][error][yii\base\ErrorException:4096] exception 'yii\base\ErrorException' with message 'Object of class api\models\Goods could not be converted to string' in /Users/lincoln/Sites/advanced/api/modules/v1/controllers/GoodsController.php:49
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/api/modules/v1/controllers/GoodsController.php(49): yii\base\ErrorHandler->handleError(4096, 'Object of class...', '/Users/lincoln/...', 49, Array)
+#1 [internal function]: api\modules\v1\controllers\GoodsController->actionFill()
+#2 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#4 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('fill', Array)
+#5 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('v1/goods/fill', Array)
+#6 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#8 {main}
+2017-08-22 21:51:06 [::1][5][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_POSTMAN_TOKEN' => 'ca9e83b7-af8d-62f0-f70c-f6a2c7113dda'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '49677'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/fill'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'PUT'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/fill'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503409866.454
+    'REQUEST_TIME' => 1503409866
+]
+2017-08-22 21:51:31 [::1][5][-][error][yii\base\ErrorException:4096] exception 'yii\base\ErrorException' with message 'Object of class api\models\Goods could not be converted to string' in /Users/lincoln/Sites/advanced/api/modules/v1/controllers/GoodsController.php:49
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/api/modules/v1/controllers/GoodsController.php(49): yii\base\ErrorHandler->handleError(4096, 'Object of class...', '/Users/lincoln/...', 49, Array)
+#1 [internal function]: api\modules\v1\controllers\GoodsController->actionFill()
+#2 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#4 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('fill', Array)
+#5 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('v1/goods/fill', Array)
+#6 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#8 {main}
+2017-08-22 21:51:31 [::1][5][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_POSTMAN_TOKEN' => '4f5d4072-e1be-873c-f99e-88ec53416901'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '49693'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/fill'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'PUT'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/fill'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503409891.713
+    'REQUEST_TIME' => 1503409891
+]
+2017-08-22 21:51:34 [::1][5][-][error][yii\base\ErrorException:4096] exception 'yii\base\ErrorException' with message 'Object of class api\models\Goods could not be converted to string' in /Users/lincoln/Sites/advanced/api/modules/v1/controllers/GoodsController.php:49
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/api/modules/v1/controllers/GoodsController.php(49): yii\base\ErrorHandler->handleError(4096, 'Object of class...', '/Users/lincoln/...', 49, Array)
+#1 [internal function]: api\modules\v1\controllers\GoodsController->actionFill()
+#2 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#4 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('fill', Array)
+#5 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('v1/goods/fill', Array)
+#6 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#8 {main}
+2017-08-22 21:51:34 [::1][5][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_POSTMAN_TOKEN' => '8deb8251-771f-a087-066c-f83f5bd66c17'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '49695'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/fill'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'PUT'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/fill'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503409894.765
+    'REQUEST_TIME' => 1503409894
+]
+2017-08-22 22:00:38 [::1][5][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to a member function save() on array' in /Users/lincoln/Sites/advanced/api/modules/v1/controllers/GoodsController.php:49
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-08-22 22:00:38 [::1][5][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_POSTMAN_TOKEN' => 'caccdc8f-5840-1dc9-42c8-fcbd9c9ebd9f'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '49935'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/fill'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'PUT'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/fill'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503410438.133
+    'REQUEST_TIME' => 1503410438
+]
+2017-08-22 22:20:48 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message '页面未找到。' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Request.php:195
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2017-08-22 22:20:48 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_POSTMAN_TOKEN' => 'b85509ab-a7bc-150b-382a-8dde38d0ddef'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '50402'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503411648.025
+    'REQUEST_TIME' => 1503411648
+]
+2017-08-23 21:46:45 [::1][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'Your request was made with invalid credentials.' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php:91
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php(74): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/ActionFilter.php(75): yii\filters\auth\AuthMethod->beforeAction(Object(yii\rest\IndexAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Component.php(545): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(272): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\rest\IndexAction))
+#6 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(154): yii\web\Controller->beforeAction(Object(yii\rest\IndexAction))
+#7 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#8 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('v1/goods/index', Array)
+#9 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#11 {main}
+2017-08-23 21:46:44 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => 'bf081753-5f2c-46ea-8d29-6c7ef669e3ef'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '58856'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503496004.711
+    'REQUEST_TIME' => 1503496004
+]
+2017-08-23 21:50:12 [::1][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'Your request was made with invalid credentials.' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php:91
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php(74): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/ActionFilter.php(75): yii\filters\auth\AuthMethod->beforeAction(Object(yii\rest\ViewAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Component.php(545): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(272): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\rest\ViewAction))
+#6 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(154): yii\web\Controller->beforeAction(Object(yii\rest\ViewAction))
+#7 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('view', Array)
+#8 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('v1/goods/view', Array)
+#9 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#11 {main}
+2017-08-23 21:50:12 [::1][-][-][info][application] $_GET = [
+    'id' => '2'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => 'aecf378e-65c0-40b8-9a16-ba7c1ef2d9bc'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '58879'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/2'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/2'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503496212.819
+    'REQUEST_TIME' => 1503496212
+]
+2017-08-23 22:33:30 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message '页面未找到。' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Request.php:195
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2017-08-23 22:33:30 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => '82d0aaff-4194-40f6-aa1b-b27d5afeedfa'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '59594'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/profile'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503498810.176
+    'REQUEST_TIME' => 1503498810
+]
+2017-08-23 22:33:58 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message '页面未找到。' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Request.php:195
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2017-08-23 22:33:58 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => 'e8a8dd73-a9e4-4af0-96f9-fd569d670799'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '59596'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/profile'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503498838.727
+    'REQUEST_TIME' => 1503498838
+]
+2017-08-23 22:34:16 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message '页面未找到。' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Request.php:195
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2017-08-23 22:34:15 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => '27daa16d-2ff8-4095-a53d-78ea7942bf0e'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '59598'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/profile'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503498855.936
+    'REQUEST_TIME' => 1503498855
+]
+2017-08-23 22:34:36 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message '页面未找到。' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Request.php:195
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2017-08-23 22:34:36 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => 'fe3cf763-44cb-43b3-8dd6-c28d938d9a2b'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '59601'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/profile'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503498876.817
+    'REQUEST_TIME' => 1503498876
+]
+2017-08-23 22:35:43 [::1][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'Your request was made with invalid credentials.' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php:91
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php(74): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/ActionFilter.php(75): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Component.php(545): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(272): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(154): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('valid-goods', Array)
+#8 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('v1/goods/valid-...', Array)
+#9 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#11 {main}
+2017-08-23 22:35:43 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => '12a6854c-f1d3-41cd-b27b-0b5e4854f267'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '59611'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/valid-goods'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/valid-goods'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503498943.728
+    'REQUEST_TIME' => 1503498943
+]
+2017-08-23 22:36:10 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message '页面未找到。' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Request.php:195
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2017-08-23 22:36:10 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => 'b977585f-5d81-458c-af05-bdc7a50ff84f'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '59616'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/valid-goods'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/valid-goods'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503498970.761
+    'REQUEST_TIME' => 1503498970
+]
+2017-08-23 22:36:25 [::1][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'Your request was made with invalid credentials.' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php:91
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php(74): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/ActionFilter.php(75): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Component.php(545): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(272): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(154): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('valid-goods', Array)
+#8 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('v1/goods/valid-...', Array)
+#9 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#11 {main}
+2017-08-23 22:36:25 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => '56757f4d-468b-4b00-b8ca-5d6e1dc57765'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '59618'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/goods/valid-goods'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/goods/valid-goods'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503498985.153
+    'REQUEST_TIME' => 1503498985
+]
+2017-08-23 22:36:56 [::1][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'Your request was made with invalid credentials.' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php:91
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php(74): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/ActionFilter.php(75): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Component.php(545): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(272): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(154): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('valid-goods', Array)
+#8 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('v1/goods/valid-...', Array)
+#9 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#11 {main}
+2017-08-23 22:36:56 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => 'dce2af94-5a14-4b19-9536-877b5b90ba4a'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '59621'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/valid'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/valid'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503499016.505
+    'REQUEST_TIME' => 1503499016
+]
+2017-08-23 22:37:00 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message '页面未找到。' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Request.php:195
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2017-08-23 22:37:00 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => 'c9f98aea-f6dc-4aa4-b356-359ae1d4c3fb'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '59621'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/valid-goods'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/valid-goods'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503499020.724
+    'REQUEST_TIME' => 1503499020
+]
+2017-08-23 22:37:05 [::1][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'Your request was made with invalid credentials.' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php:91
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php(74): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/ActionFilter.php(75): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Component.php(545): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(272): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(154): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('valid-goods', Array)
+#8 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('v1/goods/valid-...', Array)
+#9 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#11 {main}
+2017-08-23 22:37:05 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => '83d34ac8-19ec-4074-a93c-51059ba23c80'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '59621'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/valid'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/valid'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503499025.321
+    'REQUEST_TIME' => 1503499025
+]
+2017-08-24 06:39:19 [::1][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'Your request was made with invalid credentials.' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php:91
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php(74): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/ActionFilter.php(75): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Component.php(545): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(272): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(154): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('get-valid-goods', Array)
+#8 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('v1/goods/get-va...', Array)
+#9 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#11 {main}
+2017-08-24 06:39:19 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => '6195b433-f16e-4808-9117-9e94e4b4981a'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '64263'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/goods/valid'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/goods/valid'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503527958.89
+    'REQUEST_TIME' => 1503527958
+]
+2017-08-24 06:47:24 [::1][4][-][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: yii\web\User::username' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/api/modules/v1/controllers/UserController.php(82): yii\base\Component->__get('username')
+#1 [internal function]: api\modules\v1\controllers\UserController->actionGetProfile()
+#2 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#4 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('get-profile', Array)
+#5 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('v1/user/get-pro...', Array)
+#6 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#8 {main}
+2017-08-24 06:47:23 [::1][4][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => '4ca63c3a-edf4-4569-bfb3-e787c51bf6d0'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '64372'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/users/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/users/profile'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503528443.943
+    'REQUEST_TIME' => 1503528443
+]
+2017-08-24 06:47:57 [::1][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'Your request was made with invalid credentials.' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php:91
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/HttpBearerAuth.php(46): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php(61): yii\filters\auth\HttpBearerAuth->authenticate(Object(yii\web\User), Object(yii\web\Request), Object(yii\web\Response))
+#2 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/ActionFilter.php(75): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#3 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#4 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Component.php(545): call_user_func(Array, Object(yii\base\ActionEvent))
+#5 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(272): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#6 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Controller.php(154): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#8 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('get-profile', Array)
+#9 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('v1/user/get-pro...', Array)
+#10 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#12 {main}
+2017-08-24 06:47:57 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => '43d0e771-8512-4939-a90a-3b217eaff245'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '64379'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/users/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/users/profile'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503528477.664
+    'REQUEST_TIME' => 1503528477
+]
+2017-08-24 06:51:07 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message '页面未找到。' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Request.php:195
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2017-08-24 06:51:07 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => '611b1981-11e2-4ea3-aede-734a658d622f'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '64417'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/users/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/users/profile'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503528667.418
+    'REQUEST_TIME' => 1503528667
+]
+2017-08-24 06:51:39 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message '页面未找到。' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Request.php:195
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2017-08-24 06:51:39 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => '31403eda-c9cf-48a6-a9b1-00423cf06d91'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '64421'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/users/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/users/profile'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503528698.986
+    'REQUEST_TIME' => 1503528698
+]
+2017-08-24 06:51:49 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message '页面未找到。' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Request.php:195
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2017-08-24 06:51:49 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => '69e5b415-996a-4957-85a9-fca090be9dd9'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '64423'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/users/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/users/profile'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503528709.685
+    'REQUEST_TIME' => 1503528709
+]
+2017-08-24 06:51:51 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message '页面未找到。' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Request.php:195
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2017-08-24 06:51:51 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => '8378d594-cf5c-4e70-92ab-9afec4ed4e12'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '64423'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/users/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/users/profile'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1503528711.625
+    'REQUEST_TIME' => 1503528711
+]
