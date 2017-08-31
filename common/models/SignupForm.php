@@ -10,7 +10,7 @@ use yii\base\Model;
 class SignupForm extends Model
 {
     public $username;
-    public $email;
+    public $mobile;
     public $password;
     public $passwordRepeat;
 
@@ -26,11 +26,11 @@ class SignupForm extends Model
             ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
-            ['email', 'trim'],
-            ['email', 'required'],
-            ['email', 'email'],
-            ['email', 'string', 'max' => 255],
-            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
+            ['mobile', 'trim'],
+            ['mobile', 'required'],
+            ['mobile', 'mobile'],
+            ['mobile', 'string', 'max' => 11],
+            ['mobile', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This mobile has already been taken.'],
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
@@ -54,7 +54,7 @@ class SignupForm extends Model
 
         $user = new User();
         $user->username = $this->username;
-        $user->email = $this->email;
+        $user->email = $this->mobile;
         $user->setPassword($this->password);
         $user->generateAuthKey();
 

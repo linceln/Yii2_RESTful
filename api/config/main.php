@@ -11,7 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'api\controllers',
     'bootstrap' => ['log'],
-    'language' => 'zh-CN',
+//    'language' => 'zh-CN',
     'modules' => [
         'v1' => [
             'class' => 'api\modules\v1\Module',
@@ -25,16 +25,12 @@ return [
             'class' => 'yii\web\Response',
             'on beforeSend' => function ($event) {
                 $response = $event->sender;
-
-//                $result = [
-//                    'code' => isset($response->data['code']) ? $code = $response->data['code'] : $response->statusCode,
-//                    'message' => isset($response->data['message']) ? $msg = $response->data['message'] : $response->statusText,
-//                    'status' => $response->statusCode,
-//                    'data' => $response->data,
-//                ];
-//
-//                $response->data = $result;
                 $response->format = yii\web\Response::FORMAT_JSON;
+                $result = [
+                    'statusCode' => $response->statusCode,
+                    'statusText' => $response->statusText,
+                ];
+                $response->data = array_merge($result, $response->data);
             },
         ],
         'user' => [
@@ -61,16 +57,10 @@ return [
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => [
-                        'v1/goods',
-                        'v1/user',
-                    ],
+                    'controller' => 'v1/user',
                     'extraPatterns' => [
-                        'POST login' => 'login',
+                        'GET login' => 'login',
                         'POST signup' => 'signup',
-                        'GET profile' => 'get-profile',
-                        'GET valid' => 'get-valid-goods',
-                        'PUT fill' => 'fill'
                     ]
                 ],
             ],

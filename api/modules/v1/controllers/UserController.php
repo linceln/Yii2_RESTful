@@ -6,18 +6,12 @@ use Yii;
 use common\models\SignupForm;
 use api\models\LoginForm;
 use yii\base\Model;
-use yii\base\NotSupportedException;
 use yii\rest\Controller;
 use yii\helpers\ArrayHelper;
 use yii\filters\auth\HttpBearerAuth;
-use yii\web\ForbiddenHttpException;
-use yii\web\HttpException;
-use yii\web\NotFoundHttpException;
 
 class UserController extends Controller
 {
-    public $modelClass = 'common\models\User';
-
     public function behaviors()
     {
         return ArrayHelper::merge(parent::behaviors(), [
@@ -56,31 +50,17 @@ class UserController extends Controller
     public function actionLogin()
     {
         $model = new LoginForm();
-        $model->setAttributes(Yii::$app->request->post());
+        $model->setAttributes(Yii::$app->request->get());
         if ($user = $model->login()) {
             return [
                 'code' => 1,
                 'msg' => '登录成功',
-                'token' => $user->access_token,
+                'accessToken' => $user->access_token,
+                'username' => $user->username,
+                'mobile' => $user->mobile,
             ];
-        } else {
-            return $this->errorMessage($model);
         }
-    }
-
-    /**
-     * 用户资料
-     * @return array
-     */
-    public function actionGetProfile()
-    {
-        $user = Yii::$app->user->identity;
-
-        return [
-            'code' => 1,
-            'username' => $user->username,
-            'email' => $user->email,
-        ];
+        return $this->errorMessage($model);
     }
 
     /**

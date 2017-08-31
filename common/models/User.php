@@ -14,6 +14,7 @@ use yii\web\UnauthorizedHttpException;
  * User model
  *
  * @property integer $id
+ * @property string $mobile
  * @property string $username
  * @property string $password_hash
  * @property string $access_token
@@ -55,6 +56,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             'id' => 'ID',
+            'mobile' => 'Mobile',
             'username' => 'Username',
             'auth_key' => 'Auth Key',
             'password_hash' => 'Password Hash',
@@ -73,12 +75,12 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            [['username', 'auth_key', 'password_hash', 'access_token', 'email', 'created_at', 'updated_at'], 'required'],
+            [['mobile', 'username', 'auth_key', 'password_hash', 'access_token', 'created_at', 'updated_at'], 'required'],
             [['status', 'created_at', 'updated_at'], 'integer'],
             [['username', 'password_hash', 'access_token', 'password_reset_token', 'email'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
-            [['username'], 'unique'],
-            [['email'], 'unique'],
+            [['username', 'mobile'], 'unique'],
+            [['mobile'], 'string', 'max' => 11],
             [['password_reset_token'], 'unique'],
 
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
