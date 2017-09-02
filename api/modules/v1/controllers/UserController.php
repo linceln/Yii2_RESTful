@@ -2,9 +2,10 @@
 
 namespace api\modules\v1\controllers;
 
+use common\models\User;
 use Yii;
 use common\models\SignupForm;
-use api\models\LoginForm;
+use api\modules\v1\models\LoginForm;
 use yii\base\Model;
 use yii\rest\Controller;
 use yii\helpers\ArrayHelper;
@@ -51,11 +52,12 @@ class UserController extends Controller
     {
         $model = new LoginForm();
         $model->setAttributes(Yii::$app->request->get());
-        if ($user = $model->login()) {
+        if ($auth = $model->login()) {
+            $user = User::findById($auth->user_id);
             return [
                 'code' => 1,
                 'msg' => '登录成功',
-                'accessToken' => $user->access_token,
+                'accessToken' => $auth->access_token,
                 'username' => $user->username,
                 'mobile' => $user->mobile,
             ];

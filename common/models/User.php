@@ -2,12 +2,11 @@
 
 namespace common\models;
 
+use api\modules\v1\models\AuthToken;
 use Yii;
-use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
-use yii\web\NotFoundHttpException;
 use yii\web\UnauthorizedHttpException;
 
 /**
@@ -17,7 +16,6 @@ use yii\web\UnauthorizedHttpException;
  * @property string $mobile
  * @property string $username
  * @property string $password_hash
- * @property string $access_token
  * @property string $password_reset_token
  * @property string $email
  * @property string $auth_key
@@ -60,7 +58,6 @@ class User extends ActiveRecord implements IdentityInterface
             'username' => 'Username',
             'auth_key' => 'Auth Key',
             'password_hash' => 'Password Hash',
-            'access_token' => 'Access Token',
             'password_reset_token' => 'Password Reset Token',
             'email' => 'Email',
             'status' => 'Status',
@@ -75,9 +72,9 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            [['mobile', 'username', 'auth_key', 'password_hash', 'access_token', 'created_at', 'updated_at'], 'required'],
-            [['status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'password_hash', 'access_token', 'password_reset_token', 'email'], 'string', 'max' => 255],
+            [['mobile', 'username', 'auth_key', 'password_hash'], 'required'],
+            [['status'], 'integer'],
+            [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
             [['username', 'mobile'], 'unique'],
             [['mobile'], 'string', 'max' => 11],
@@ -86,17 +83,6 @@ class User extends ActiveRecord implements IdentityInterface
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
         ];
-    }
-
-    public function beforeSave($insert)
-    {
-        if (parent::beforeSave($insert)) {
-            if ($insert) {
-                $this->created_at = time();
-            }
-            $this->updated_at = time();
-        };
-        return true;
     }
 
     /**
@@ -108,30 +94,27 @@ class User extends ActiveRecord implements IdentityInterface
     }
 
     /**
+     * 关联 auth_token 表
+     * @return \yii\db\ActiveQuery
+     */
+    public function getToken()
+    {
+        return $this->hasOne(AuthToken::className(), ['user_id' => 'id']);
+    }
+
+    /**
      * @inheritdoc
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        if (!self::isAccessTokenValid($token)) {
+        if (!AuthToken::isAccessTokenValid($token)) {
             throw new UnauthorizedHttpException('Access token is invalid');
         }
-        return static::findOne(['access_token' => $token, 'status' => self::STATUS_ACTIVE]);
-    }
-
-    public function generateAccessToken()
-    {
-        $this->access_token = Yii::$app->security->generateRandomString() . '_' . time();
-    }
-
-    public static function isAccessTokenValid($token)
-    {
-        if (empty($token)) {
-            return false;
-        }
-
-        $timestamp = (int)substr($token, strrpos($token, '_') + 1);
-        $expire = Yii::$app->params['user.accessTokenExpire'];
-        return $timestamp + $expire >= time();
+        return static::find()
+            ->joinWith('token')
+            ->select(['access_token', 'status'])
+            ->where(['access_token' => $token, 'status' => self::STATUS_ACTIVE])
+            ->one();
     }
 
     /**
@@ -143,6 +126,16 @@ class User extends ActiveRecord implements IdentityInterface
     public static function findByUsername($username)
     {
         return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
+    }
+
+    /**
+     * Finds user by id
+     * @param $id
+     * @return static|null
+     */
+    public static function findById($id)
+    {
+        return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
     }
 
     /**

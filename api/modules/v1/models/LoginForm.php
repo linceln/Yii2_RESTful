@@ -1,9 +1,11 @@
 <?php
 
-namespace api\models;
+namespace api\modules\v1\models;
 
+use Yii;
 use yii\base\Model;
 use common\models\User;
+use yii\db\Exception;
 
 /**
  * Api login form
@@ -12,6 +14,7 @@ class LoginForm extends Model
 {
     public $username;
     public $password;
+    public $device;
 
     /**
      * @var User
@@ -26,9 +29,10 @@ class LoginForm extends Model
     {
         return [
             // username and password are both required
-            [['username', 'password'], 'required'],
+            [['username', 'password', 'device'], 'required'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
+            ['device', 'integer'],
         ];
     }
 
@@ -51,17 +55,26 @@ class LoginForm extends Model
 
     /**
      * Logs in a user using the provided username and password.
-     *
-     * @return User|null
+     * @return AuthToken|null
+     * @throws Exception
      */
     public function login()
     {
         if ($this->validate()) {
-            if (!User::isAccessTokenValid($this->_user->access_token)) {
-                $this->_user->generateAccessToken();
-                $this->_user->save();
+            if (!AuthToken::isAccessTokenValid($this->_user->id)) {
+                $auth = new AuthToken();
+                $auth->user_id = $this->_user->id;
+                $auth->access_token = Yii::$app->security->generateRandomString();
+                $auth->expired_at = time() + Yii::$app->params['user.accessTokenExpire'];
+                $auth->device_id = $this->device;
+                $result = $auth->save();
+                if(!$result){
+                    throw new Exception(current($auth->getFirstErrors()));
+                }
+            } else {
+                $auth = AuthToken::findOne(['user_id' => $this->_user->id]);
             }
-            return $this->_user;
+            return $auth;
         } else {
             return null;
         }
