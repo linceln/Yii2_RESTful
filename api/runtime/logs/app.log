@@ -2485,3 +2485,123 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1504320972.5
     'REQUEST_TIME' => 1504320972
 ]
+2017-09-02 21:02:47 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Request.php:195
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2017-09-02 21:02:47 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => 'e8880526-ce7c-4247-8c08-6e18c11d734c'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '50175'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/users/test'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/users/test'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1504357367.571
+    'REQUEST_TIME' => 1504357367
+]
+2017-09-02 21:03:57 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Request.php:195
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2017-09-02 21:03:57 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => 'ca4b1e2c-1ecc-4266-a34b-36d477f2a072'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '50256'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/users/test'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/users/test'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1504357437.025
+    'REQUEST_TIME' => 1504357437
+]
+2017-09-02 21:05:01 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Request.php:195
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2017-09-02 21:05:01 [::1][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => '99edf08a-47c4-4871-8b61-fa982a7f13a0'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/6.2.5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '50271'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/users/test'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/users/test'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1504357501.057
+    'REQUEST_TIME' => 1504357501
+]

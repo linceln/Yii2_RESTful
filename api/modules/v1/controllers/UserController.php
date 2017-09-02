@@ -21,6 +21,7 @@ class UserController extends Controller
                 'optional' => [// 排除不需要认证的动作
                     'login',
                     'signup',
+                    'test'
                 ]
             ]
         ]);
@@ -63,6 +64,14 @@ class UserController extends Controller
             ];
         }
         return $this->errorMessage($model);
+    }
+
+    public function actionTest()
+    {
+        return [
+            'code' => 1,
+            'msg' => 'Test',
+        ];
     }
 
     /**
