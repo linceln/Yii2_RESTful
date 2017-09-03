@@ -2605,3 +2605,145 @@ Stack trace:
     'REQUEST_TIME_FLOAT' => 1504357501.057
     'REQUEST_TIME' => 1504357501
 ]
+2017-09-02 21:22:02 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Request.php:195
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2017-09-02 21:22:02 [::1][-][-][info][application] $_GET = [
+    'r' => 'gii/default/view'
+    'id' => 'model'
+]
+
+$_COOKIE = [
+    '_identity-backend' => 'efa9a3e95b17881db93ca1431582e354252c162a589bbeb9bc8f5cd940575fb0a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[3,\"ZCMrCzMPpBv2A2Q-j6B9lcdt2tB2yKur\",2592000]\";}'
+    '_csrf-backend' => '05fb1f5a24338b07109047e208b04f10ca795ad9fb51278d8b178a7150f9ed8ea:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"#q*Ý˜ëhm\\È,I´Äú­ºe—±¯É“G:*º¾Ž\";}'
+    'advanced-backend' => 'fhr30tn2m9aoskvats7s89gi74'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_COOKIE' => '_identity-backend=efa9a3e95b17881db93ca1431582e354252c162a589bbeb9bc8f5cd940575fb0a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B3%2C%22ZCMrCzMPpBv2A2Q-j6B9lcdt2tB2yKur%22%2C2592000%5D%22%3B%7D; _csrf-backend=05fb1f5a24338b07109047e208b04f10ca795ad9fb51278d8b178a7150f9ed8ea%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22%23q%2A%DD%15%98%EBh%0Bm%5C%C8%2CI%B4%C4%FA%AD%BA%01e%97%B1%AF%C9%93G%3A%2A%BA%BE%8E%22%3B%7D; advanced-backend=fhr30tn2m9aoskvats7s89gi74'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.4'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-us'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '50687'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=gii%2Fdefault%2Fview&id=model'
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/index.php?r=gii%2Fdefault%2Fview&id=model'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1504358522.682
+    'REQUEST_TIME' => 1504358522
+]
+2017-09-02 21:22:08 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Request.php:195
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2017-09-02 21:22:08 [::1][-][-][info][application] $_COOKIE = [
+    '_identity-backend' => 'efa9a3e95b17881db93ca1431582e354252c162a589bbeb9bc8f5cd940575fb0a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[3,\"ZCMrCzMPpBv2A2Q-j6B9lcdt2tB2yKur\",2592000]\";}'
+    '_csrf-backend' => '05fb1f5a24338b07109047e208b04f10ca795ad9fb51278d8b178a7150f9ed8ea:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"#q*Ý˜ëhm\\È,I´Äú­ºe—±¯É“G:*º¾Ž\";}'
+    'advanced-backend' => 'fhr30tn2m9aoskvats7s89gi74'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_COOKIE' => '_identity-backend=efa9a3e95b17881db93ca1431582e354252c162a589bbeb9bc8f5cd940575fb0a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B3%2C%22ZCMrCzMPpBv2A2Q-j6B9lcdt2tB2yKur%22%2C2592000%5D%22%3B%7D; _csrf-backend=05fb1f5a24338b07109047e208b04f10ca795ad9fb51278d8b178a7150f9ed8ea%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22%23q%2A%DD%15%98%EBh%0Bm%5C%C8%2CI%B4%C4%FA%AD%BA%01e%97%B1%AF%C9%93G%3A%2A%BA%BE%8E%22%3B%7D; advanced-backend=fhr30tn2m9aoskvats7s89gi74'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.4'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-us'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '50692'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1504358528.236
+    'REQUEST_TIME' => 1504358528
+]
+2017-09-02 21:22:21 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Request.php:195
+Stack trace:
+#0 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /Users/lincoln/Sites/advanced/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/lincoln/Sites/advanced/api/web/index.php(17): yii\base\Application->run()
+#3 {main}
+2017-09-02 21:22:21 [::1][-][-][info][application] $_COOKIE = [
+    '_identity-backend' => 'efa9a3e95b17881db93ca1431582e354252c162a589bbeb9bc8f5cd940575fb0a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[3,\"ZCMrCzMPpBv2A2Q-j6B9lcdt2tB2yKur\",2592000]\";}'
+    '_csrf-backend' => '05fb1f5a24338b07109047e208b04f10ca795ad9fb51278d8b178a7150f9ed8ea:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"#q*Ý˜ëhm\\È,I´Äú­ºe—±¯É“G:*º¾Ž\";}'
+    'advanced-backend' => 'fhr30tn2m9aoskvats7s89gi74'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_COOKIE' => '_identity-backend=efa9a3e95b17881db93ca1431582e354252c162a589bbeb9bc8f5cd940575fb0a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B3%2C%22ZCMrCzMPpBv2A2Q-j6B9lcdt2tB2yKur%22%2C2592000%5D%22%3B%7D; _csrf-backend=05fb1f5a24338b07109047e208b04f10ca795ad9fb51278d8b178a7150f9ed8ea%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22%23q%2A%DD%15%98%EBh%0Bm%5C%C8%2CI%B4%C4%FA%AD%BA%01e%97%B1%AF%C9%93G%3A%2A%BA%BE%8E%22%3B%7D; advanced-backend=fhr30tn2m9aoskvats7s89gi74'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.4'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-us'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Unix) PHP/5.6.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Library/WebServer/Documents'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => '/~lincoln'
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/lincoln/Sites'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/lincoln/Sites/advanced/api/web/index.php'
+    'REMOTE_PORT' => '50700'
+    'REDIRECT_URL' => '/~lincoln/advanced/api/web/v1/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/~lincoln/advanced/api/web/v1/'
+    'SCRIPT_NAME' => '/~lincoln/advanced/api/web/index.php'
+    'PHP_SELF' => '/~lincoln/advanced/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1504358541.877
+    'REQUEST_TIME' => 1504358541
+]

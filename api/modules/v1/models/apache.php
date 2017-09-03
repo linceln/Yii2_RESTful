@@ -1,8 +1,8 @@
 <VirtualHost *:80>
     ServerName api.dev.com
-    DocumentRoot "/var/www/html/Yii2_RESTful/api/web/"
+    DocumentRoot "/~lincoln/advanced/api/web/"
 
-    <Directory "/var/www/html/Yii2_RESTful/api/web/">
+    <Directory "/~lincoln/advanced/api/web/">
     # use mod_rewrite for pretty URL support
     RewriteEngine on
     # If a directory or a file exists, use the request directly
@@ -26,9 +26,9 @@
 
 <VirtualHost *:80>
     ServerName backend.dev.com
-    DocumentRoot "/var/www/html/Yii2_RESTful/backend/web/"
+    DocumentRoot "/~lincoln/advanced/backend/web/"
 
-    <Directory "/var/www/html/Yii2_RESTful/backend/web/">
+    <Directory "/~lincoln/advanced/backend/web/">
     # use mod_rewrite for pretty URL support
     RewriteEngine on
     # If a directory or a file exists, use the request directly
@@ -52,9 +52,9 @@
 
 <VirtualHost *:80>
     ServerName frontend.dev.com
-    DocumentRoot "/var/www/html/Yii2_RESTful/frontend/web/"
+    DocumentRoot "/~lincoln/advanced/frontend/web/"
 
-    <Directory "/var/www/html/Yii2_RESTful/frontend/web/">
+    <Directory "/~lincoln/advanced/frontend/web">
     # use mod_rewrite for pretty URL support
     RewriteEngine on
     # If a directory or a file exists, use the request directly
