@@ -44,13 +44,13 @@ return [
                 ],
             ],
         ],
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-//                '<controller:\w+>s' => '<controller>/index'
-            ],
-        ],
+//        'urlManager' => [
+//            'enablePrettyUrl' => true,
+//            'showScriptName' => false,
+//            'rules' => [
+////                '<controller:\w+>s' => '<controller>/index'
+//            ],
+//        ],
     ],
     'params' => $params,
 ];
