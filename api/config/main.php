@@ -11,7 +11,6 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'api\modules\v1\controllers',
     'bootstrap' => ['log'],
-//    'language' => 'zh-CN',
     'modules' => [
         'v1' => [
             'class' => 'api\modules\v1\Module',
@@ -49,6 +48,7 @@ return [
             ],
         ],
         'errorHandler' => [
+            'errorAction' => 'v1/site/error',
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
@@ -64,6 +64,14 @@ return [
                         'GET test' => 'test',
                     ]
                 ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'v1/site',
+                    'extraPatterns' => [
+                        'GET test' => 'test',
+                        'GET error' => 'error',
+                    ]
+                ]
             ],
         ],
     ],
