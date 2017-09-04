@@ -9,7 +9,7 @@ $params = array_merge(
 return [
     'id' => 'api',
     'basePath' => dirname(__DIR__),
-    'controllerNamespace' => 'api\controllers',
+    'controllerNamespace' => 'api\modules\v1\controllers',
     'bootstrap' => ['log'],
 //    'language' => 'zh-CN',
     'modules' => [
