@@ -68,7 +68,6 @@ class UserController extends Controller
 
     public function actionTest()
     {
-        var_dump(1);die;
         return [
             'code' => 1,
             'msg' => 'Test',
