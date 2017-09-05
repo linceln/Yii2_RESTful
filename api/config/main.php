@@ -9,8 +9,8 @@ $params = array_merge(
 return [
     'id' => 'api',
     'basePath' => dirname(__DIR__),
-//    'controllerNamespace' => 'api\controllers',
-    'bootstrap' => ['log', 'v1'],
+    'controllerNamespace' => 'api\controllers',
+    'bootstrap' => ['log'],
     'modules' => [
         'v1' => [
             'class' => 'api\modules\v1\Module',
@@ -55,23 +55,23 @@ return [
             'showScriptName' => false,
             'enableStrictParsing' => true,
             'rules' => [
-                [
-                    'class' => 'yii\rest\UrlRule',
-                    'controller' => 'v1/user',
-                    'extraPatterns' => [
-                        'GET login' => 'login',
-                        'POST signup' => 'signup',
-                        'GET test' => 'test',
-                    ]
-                ],
-                [
-                    'class' => 'yii\rest\UrlRule',
-                    'controller' => 'v1/site',
-                    'extraPatterns' => [
-                        'GET test' => 'test',
-                        'GET error' => 'error',
-                    ]
-                ]
+//                [
+//                    'class' => 'yii\rest\UrlRule',
+//                    'controller' => 'v1/user',
+//                    'extraPatterns' => [
+//                        'GET login' => 'login',
+//                        'POST signup' => 'signup',
+//                        'GET test' => 'test',
+//                    ]
+//                ],
+//                [
+//                    'class' => 'yii\rest\UrlRule',
+//                    'controller' => 'v1/site',
+//                    'extraPatterns' => [
+//                        'GET test' => 'test',
+//                        'GET error' => 'error',
+//                    ]
+//                ]
             ],
         ],
     ],
