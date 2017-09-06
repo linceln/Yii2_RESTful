@@ -74,7 +74,7 @@ class LoginForm extends Model
             } else {
                 $auth = AuthToken::findOne(['user_id' => $this->_user->id]);
             }
-            if (Yii::$app->getUser()->loginByAccessToken($auth->access_token)) {
+            if (Yii::$app->getUser()->login($this->_user)) {
                 return $auth;
             }
         } else {
