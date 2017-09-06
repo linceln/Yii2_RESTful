@@ -68,13 +68,15 @@ class LoginForm extends Model
                 $auth->expired_at = time() + Yii::$app->params['user.accessTokenExpire'];
                 $auth->device_id = $this->device;
                 $result = $auth->save();
-                if(!$result){
+                if (!$result) {
                     throw new Exception(current($auth->getFirstErrors()));
                 }
             } else {
                 $auth = AuthToken::findOne(['user_id' => $this->_user->id]);
             }
-            return $auth;
+            if (Yii::$app->getUser()->loginByAccessToken($auth->access_token)) {
+                return $auth;
+            }
         } else {
             return null;
         }

@@ -34,10 +34,12 @@ class UserController extends Controller
     {
         $model = new SignupForm();
         $model->setAttributes(Yii::$app->request->post());
-        if ($model->signup()) {
+        if ($user = $model->signup()) {
             return [
                 'code' => 1,
                 'msg' => '注册成功',
+                'username' => $user->username,
+                'mobile' => $user->mobile,
             ];
         } else {
             return $this->errorMessage($model);
