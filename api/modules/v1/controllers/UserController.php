@@ -20,8 +20,7 @@ class UserController extends Controller
                 'class' => HttpBearerAuth::className(),
                 'optional' => [// 排除不需要认证的动作
                     'login',
-                    'signup',
-                    'test'
+                    'signup'
                 ]
             ]
         ]);

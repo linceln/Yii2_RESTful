@@ -48,7 +48,7 @@ return [
             ],
         ],
         'errorHandler' => [
-            'errorAction' => 'v1/site/error',
+//            'errorAction' => 'v1/site/error',
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
@@ -61,7 +61,6 @@ return [
                     'extraPatterns' => [
                         'GET login' => 'login',
                         'POST signup' => 'signup',
-                        'GET test' => 'test',
                     ]
                 ],
                 [
