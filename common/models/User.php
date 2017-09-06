@@ -75,8 +75,8 @@ class User extends ActiveRecord implements IdentityInterface
             [['auth_key'], 'string', 'max' => 32],
             [['username', 'mobile'], 'unique'],
             [['mobile'], 'string', 'max' => 11],
+            ['mobile', 'match', 'pattern' => '/^1[34578]{1}\d{9}$/', 'message' => '请输入正确的手机号码'],
             [['password_reset_token'], 'unique'],
-
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
         ];
