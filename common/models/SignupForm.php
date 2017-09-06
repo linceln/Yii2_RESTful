@@ -28,7 +28,7 @@ class SignupForm extends Model
 
             ['mobile', 'trim'],
             ['mobile', 'required'],
-            ['mobile', 'mobile'],
+//            ['mobile', 'mobile'],
             ['mobile', 'string', 'max' => 11],
             ['mobile', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This mobile has already been taken.'],
 
