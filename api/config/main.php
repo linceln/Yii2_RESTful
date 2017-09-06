@@ -54,24 +54,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'enableStrictParsing' => true,
-            'rules' => [
-                [
-                    'class' => 'yii\rest\UrlRule',
-                    'controller' => 'v1/user',
-                    'extraPatterns' => [
-                        'GET login' => 'login',
-                        'POST signup' => 'signup',
-                    ]
-                ],
-                [
-                    'class' => 'yii\rest\UrlRule',
-                    'controller' => 'v1/site',
-                    'extraPatterns' => [
-                        'GET test' => 'test',
-                        'GET error' => 'error',
-                    ]
-                ]
-            ],
+            'rules' => require(__DIR__ . '/rest-rules.php')
         ],
     ],
     'params' => $params,
