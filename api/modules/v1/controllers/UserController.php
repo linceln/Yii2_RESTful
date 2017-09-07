@@ -5,7 +5,7 @@ namespace api\modules\v1\controllers;
 use common\models\User;
 use Yii;
 use common\models\SignupForm;
-use api\modules\v1\models\LoginForm;
+use common\models\LoginForm;
 use yii\base\Model;
 use yii\rest\Controller;
 use yii\helpers\ArrayHelper;
@@ -59,7 +59,7 @@ class UserController extends Controller
             return [
                 'code' => 1,
                 'msg' => '登录成功',
-                'accessToken' => $auth->access_token,
+                'token' => $auth->access_token,
                 'username' => $user->username,
                 'mobile' => $user->mobile,
             ];

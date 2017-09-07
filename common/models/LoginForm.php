@@ -1,21 +1,34 @@
 <?php
+
 namespace common\models;
 
 use Yii;
 use yii\base\Model;
-use backend\models\UserBackend as User;
+use yii\db\Exception;
+use api\modules\v1\models\AuthToken;
 
 /**
- * Login form
+ * Api login form
  */
 class LoginForm extends Model
 {
     public $username;
     public $password;
-    public $rememberMe = true;
+    public $device;
 
+    /**
+     * @var User
+     */
     private $_user;
 
+
+    public function scenarios()
+    {
+        return array_merge(parent::scenarios(), [
+            'frontend' => ['username', 'password'],
+            'api' => ['username', 'password', 'device']
+        ]);
+    }
 
     /**
      * @inheritdoc
@@ -23,12 +36,11 @@ class LoginForm extends Model
     public function rules()
     {
         return [
-            // username and password are both required
-            [['username', 'password'], 'required'],
-            // rememberMe must be a boolean value
-            ['rememberMe', 'boolean'],
-            // password is validated by validatePassword()
+            [['username', 'password', 'device'], 'required'],
             ['password', 'validatePassword'],
+
+            [['device'], 'required', 'on' => 'api'],
+            ['device', 'integer', 'on' => 'api'],
         ];
     }
 
@@ -51,15 +63,30 @@ class LoginForm extends Model
 
     /**
      * Logs in a user using the provided username and password.
-     *
-     * @return bool whether the user is logged in successfully
+     * @return AuthToken|null
+     * @throws Exception
      */
     public function login()
     {
         if ($this->validate()) {
-            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
+            if (!AuthToken::isAccessTokenValid($this->_user->id)) {
+                $auth = new AuthToken();
+                $auth->user_id = $this->_user->id;
+                $auth->access_token = Yii::$app->security->generateRandomString();
+                $auth->expired_at = time() + Yii::$app->params['user.accessTokenExpire'];
+                $auth->device_id = $this->device;
+                $result = $auth->save();
+                if (!$result) {
+                    throw new Exception(current($auth->getFirstErrors()));
+                }
+            } else {
+                $auth = AuthToken::findOne(['user_id' => $this->_user->id]);
+            }
+            if (Yii::$app->getUser()->login($this->_user)) {
+                return $auth;
+            }
         } else {
-            return false;
+            return null;
         }
     }
 

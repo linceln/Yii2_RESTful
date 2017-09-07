@@ -1,24 +1,19 @@
 <?php
-
-namespace api\modules\v1\models;
+namespace backend\models;
 
 use Yii;
 use yii\base\Model;
-use common\models\User;
-use yii\db\Exception;
+use backend\models\UserBackend as User;
 
 /**
- * Api login form
+ * Login form
  */
 class LoginForm extends Model
 {
     public $username;
     public $password;
-    public $device;
+    public $rememberMe = true;
 
-    /**
-     * @var User
-     */
     private $_user;
 
 
@@ -29,10 +24,11 @@ class LoginForm extends Model
     {
         return [
             // username and password are both required
-            [['username', 'password', 'device'], 'required'],
+            [['username', 'password'], 'required'],
+            // rememberMe must be a boolean value
+            ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
-            ['device', 'integer'],
         ];
     }
 
@@ -55,30 +51,15 @@ class LoginForm extends Model
 
     /**
      * Logs in a user using the provided username and password.
-     * @return AuthToken|null
-     * @throws Exception
+     *
+     * @return bool whether the user is logged in successfully
      */
     public function login()
     {
         if ($this->validate()) {
-            if (!AuthToken::isAccessTokenValid($this->_user->id)) {
-                $auth = new AuthToken();
-                $auth->user_id = $this->_user->id;
-                $auth->access_token = Yii::$app->security->generateRandomString();
-                $auth->expired_at = time() + Yii::$app->params['user.accessTokenExpire'];
-                $auth->device_id = $this->device;
-                $result = $auth->save();
-                if (!$result) {
-                    throw new Exception(current($auth->getFirstErrors()));
-                }
-            } else {
-                $auth = AuthToken::findOne(['user_id' => $this->_user->id]);
-            }
-            if (Yii::$app->getUser()->login($this->_user)) {
-                return $auth;
-            }
+            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
         } else {
-            return null;
+            return false;
         }
     }
 
