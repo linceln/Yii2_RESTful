@@ -29,7 +29,9 @@ return [
                     'statusCode' => $response->statusCode,
                     'statusText' => $response->statusText,
                 ];
-                $response->data = array_merge($result, $response->data);
+                if (is_array($response->data)) {
+                    $response->data = array_merge($result, $response->data);
+                }
             },
         ],
         'user' => [
