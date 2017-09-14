@@ -15,12 +15,13 @@ class SiteController extends Controller
 {
     public function actionAutoPull()
     {
-        shell_exec('cd /var/www/html/lince');
-        $result = shell_exec('git pull');
+        $resultCD = shell_exec('cd /var/www/html/lince');
+        $resultPull = shell_exec('git pull');
         return [
             'code' => 1,
             'msg' => 'Successful',
-            'result' => $result,
+            'cd' => $resultCD,
+            'pull' => $resultPull,
         ];
     }
 
