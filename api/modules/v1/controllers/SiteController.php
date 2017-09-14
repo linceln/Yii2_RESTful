@@ -16,10 +16,11 @@ class SiteController extends Controller
     public function actionAutoPull()
     {
         shell_exec('cd /var/www/html/lince');
-        shell_exec('git pull origin master');
-        return[
+        $result = shell_exec('git pull');
+        return [
             'code' => 1,
-            'msg' => 'Successful'
+            'msg' => 'Successful',
+            'result' => $result,
         ];
     }
 
