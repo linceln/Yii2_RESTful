@@ -15,7 +15,7 @@ class SiteController extends Controller
 {
     public function actionAutoPull()
     {
-        $result = shell_exec('cd ../../ && ls && git pull');
+        $result = shell_exec('cd ../../ && git status && git pull');
         return [
             'code' => 1,
             'msg' => 'Successful',
