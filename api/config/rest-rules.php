@@ -18,6 +18,7 @@ return [
         'class' => 'yii\rest\UrlRule',
         'controller' => 'v1/site',
         'extraPatterns' => [
+            'POST auto-pull' => 'auto-pull',
             'GET test' => 'test',
             'GET error' => 'error',
         ]

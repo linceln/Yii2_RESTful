@@ -13,6 +13,11 @@ use yii\rest\Controller;
 
 class SiteController extends Controller
 {
+    public function actionAutoPull()
+    {
+        return[1,2,3];
+    }
+
     public function actionTest()
     {
         return [
