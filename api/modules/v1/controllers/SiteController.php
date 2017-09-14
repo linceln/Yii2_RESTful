@@ -15,7 +15,12 @@ class SiteController extends Controller
 {
     public function actionAutoPull()
     {
-        return[1,2,3];
+        shell_exec('cd /var/www/html/lince');
+        shell_exec('git pull origin master');
+        return[
+            'code' => 1,
+            'msg' => 'Successful'
+        ];
     }
 
     public function actionTest()
