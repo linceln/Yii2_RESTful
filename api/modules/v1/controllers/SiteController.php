@@ -25,7 +25,7 @@ class SiteController extends Controller
 
     public function actionTest()
     {
-        $result = shell_exec('cd ../../ && git push origin master 2>&1');
+        $result = shell_exec('cd ../../ && ls 2>&1');
         return [
             'code' => 1,
             'msg' => 'Test is successful',
