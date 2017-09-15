@@ -15,19 +15,21 @@ class SiteController extends Controller
 {
     public function actionAutoPull()
     {
-        $result = shell_exec('cd ../../ && git status && git pull');
+        $result = shell_exec('cd ../../ && git status && git pull origin master');
         return [
             'code' => 1,
             'msg' => 'Successful',
-            'cd' => $result,
+            'result' => $result,
         ];
     }
 
     public function actionTest()
     {
+        $result = shell_exec('cd ../../ && git status && git push origin master');
         return [
             'code' => 1,
             'msg' => 'Test is successful now! ',
+            'result' => $result,
         ];
     }
 
