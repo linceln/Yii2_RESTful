@@ -28,7 +28,7 @@ class SiteController extends Controller
         $result = shell_exec('cd ../../ && ls 2>&1');
         return [
             'code' => 1,
-            'msg' => 'Test is successful',
+            'msg' => 'Test is successful now! ',
             'result' => $result,
         ];
     }
