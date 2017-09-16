@@ -17,7 +17,7 @@ class SiteController extends Controller
     {
         $signature = Yii::$app->request->headers->get('X-Hub-Signature');
         $payload = Yii::$app->request->post('payload');
-        $mySignature = 'sha1=' . hash_hmac('sha1', $payload, 'qwertyuiop');
+        $mySignature = 'sha1=' . hash_hmac('sha1', 'qwertyuiop', $payload);
 
         $result = shell_exec('cd ../../ && git pull origin master 2>&1');
         return [
