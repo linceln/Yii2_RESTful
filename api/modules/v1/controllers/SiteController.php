@@ -17,7 +17,7 @@ class SiteController extends Controller
     {
         $signature = Yii::$app->request->headers->get('X-Hub-Signature');
         $payload = Yii::$app->request->post();
-        $mySignature = 'sha1=' . hash_hmac('sha1', $payload, 'http://117.48.203.197:8090/v1/sites/auto-pull');
+        $mySignature = 'sha1=' . hash_hmac('sha1', json_encode($payload), 'http://117.48.203.197:8090/v1/sites/auto-pull');
 
         $result = shell_exec('cd ../../ && git pull origin master 2>&1');
         return [
