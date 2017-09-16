@@ -2,7 +2,7 @@
 
 namespace common\models;
 
-use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "bmi".
@@ -14,7 +14,7 @@ use Yii;
  * @property string $mobile
  * @property number $bmi
  */
-class Bmi extends \yii\db\ActiveRecord
+class Bmi extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -32,6 +32,7 @@ class Bmi extends \yii\db\ActiveRecord
         return [
             [['name', 'weight', 'height', 'mobile', 'bmi'], 'required'],
             [['weight', 'height', 'bmi'], 'number'],
+            [['mobile'], 'unique'],
             [['name', 'mobile'], 'string', 'max' => 255],
         ];
     }

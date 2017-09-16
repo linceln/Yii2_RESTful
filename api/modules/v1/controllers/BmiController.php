@@ -17,7 +17,7 @@ class BmiController extends Controller
     public function actionCreate()
     {
         $model = new Bmi();
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post(), '') && $model->save()) {
             return [
                 'code' => 1,
                 'msg' => '保存成功',
