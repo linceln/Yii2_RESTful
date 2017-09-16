@@ -25,8 +25,6 @@ class SiteController extends Controller
                 'code' => 1,
                 'msg' => 'Successful',
                 'result' => $result,
-                'signature' => $signature,
-                'mySignature' => $mySignature,
             ];
         } else {
             return [
