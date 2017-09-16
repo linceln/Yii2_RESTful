@@ -16,7 +16,8 @@ class SiteController extends Controller
     public function actionAutoPull()
     {
         $signature = Yii::$app->request->headers->get('X-Hub-Signature');
-        $payload = Yii::$app->request->post();
+        $payload = Yii::$app->request->post('payload');
+        $mySignature = 'sha1=' . sha1('qwertyuiop' . $payload);
 
         $result = shell_exec('cd ../../ && git pull origin master 2>&1');
         return [
@@ -25,6 +26,7 @@ class SiteController extends Controller
             'result' => $result,
             'payload' => $payload,
             'signature' => $signature,
+            'mySignature' => $mySignature,
         ];
     }
 
