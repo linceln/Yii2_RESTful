@@ -16,8 +16,9 @@ class SiteController extends Controller
     public function actionAutoPull()
     {
         $signature = Yii::$app->request->headers->get('X-Hub-Signature');
-        $payload = Yii::$app->request->post();
-        $mySignature = 'sha1=' . hash_hmac('sha1', json_encode($payload), 'http://117.48.203.197:8090/v1/sites/auto-pull');
+//        $payload = Yii::$app->request->post('payload');
+        $payload = file_get_contents('php://input');
+        $mySignature = 'sha1=' . hash_hmac('sha1', $payload, 'http://117.48.203.197:8090/v1/sites/auto-pull');
 
         $result = shell_exec('cd ../../ && git pull origin master 2>&1');
         return [
@@ -26,6 +27,7 @@ class SiteController extends Controller
             'result' => $result,
             'signature' => $signature,
             'mySignature' => $mySignature,
+            'payload' => $payload
         ];
     }
 
