@@ -26,7 +26,7 @@ class BmiController extends Controller
         } else {
             return [
                 'code' => 0,
-                'msg' => '保存失败'
+                'msg' => current($model->getFirstErrors())
             ];
         }
     }
