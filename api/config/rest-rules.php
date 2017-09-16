@@ -22,5 +22,12 @@ return [
             'GET test' => 'test',
             'GET error' => 'error',
         ]
-    ]
+    ],
+    [
+        'class' => 'yii\rest\UrlRule',
+        'controller' => 'v1/bmi',
+        'extraPatterns' => [
+
+        ]
+    ],
 ];
