@@ -39,7 +39,7 @@ class SiteController extends Controller
     {
         return [
             'code' => 1,
-            'msg' => 'Request is OK now.',
+            'msg' => 'Request is OK.',
         ];
     }
 
