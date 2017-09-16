@@ -15,8 +15,7 @@ class SiteController extends Controller
 {
     public function actionAutoPull()
     {
-        $headers = Yii::$app->request->headers;
-        $signature = $headers->get('X-Hub-Signature');
+        $signature = Yii::$app->request->headers->get('X-Hub-Signature');
         $payload = Yii::$app->request->post('Payload');
         $result = shell_exec('cd ../../ && git pull origin master 2>&1');
         return [
@@ -32,7 +31,7 @@ class SiteController extends Controller
     {
         return [
             'code' => 1,
-            'msg' => 'Request is successful.',
+            'msg' => 'Request is successful now.',
         ];
     }
 
