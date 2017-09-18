@@ -81,7 +81,7 @@ class LoginForm extends Model
                 throw new Exception(current($auth->getFirstErrors()));
             }
         } else {
-            if (!AuthToken::isAccessTokenValid($this->_user->id)) {
+            if ($auth->expired_at < time()) {
                 $auth->access_token = Yii::$app->security->generateRandomString();
                 $auth->expired_at = time() + Yii::$app->params['user.accessTokenExpire'];
                 $auth->device_id = $this->device;
