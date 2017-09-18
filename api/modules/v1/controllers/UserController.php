@@ -65,6 +65,7 @@ class UserController extends Controller
                 'device_id' => $auth->device->id,
                 'device_name' => $auth->device->name,
                 'device_salt' => $auth->device->salt,
+                'device' => $auth->device
             ];
         }
         return $this->errorMessage($model);
