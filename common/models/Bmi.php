@@ -51,4 +51,10 @@ class Bmi extends ActiveRecord
             'bmi' => 'Bmi',
         ];
     }
+
+    public function create($user_id)
+    {
+        $this->user_id = $user_id;
+        return $this->save();
+    }
 }
