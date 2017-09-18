@@ -92,7 +92,7 @@ class LoginForm extends Model
             }
         }
 
-        if (Yii::$app->getUser()->login($this->_user)) {
+        if (Yii::$app->getUser()->loginByAccessToken($auth->access_token)) {
             return $auth;
         }
 

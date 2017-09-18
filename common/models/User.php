@@ -108,7 +108,7 @@ class User extends ActiveRecord implements IdentityInterface
             throw new UnauthorizedHttpException('Access token is invalid');
         }
         return static::find()
-            ->joinWith('token')
+            ->innerJoinWith('token')
             ->select(['access_token', 'status'])
             ->where(['access_token' => $token, 'status' => self::STATUS_ACTIVE])
             ->one();
