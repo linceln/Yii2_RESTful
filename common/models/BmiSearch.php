@@ -1,6 +1,6 @@
 <?php
 
-namespace common\Models;
+namespace common\models;
 
 use Yii;
 use yii\base\Model;
@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use common\models\Bmi;
 
 /**
- * BmiSearch represents the model behind the search form about `common\Models\Bmi`.
+ * BmiSearch represents the model behind the search form about `common\models\Bmi`.
  */
 class BmiSearch extends Bmi
 {
@@ -18,9 +18,9 @@ class BmiSearch extends Bmi
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['name', 'mobile'], 'safe'],
-            [['weight', 'height'], 'number'],
+            [['id', 'user_id'], 'integer'],
+            [['weight', 'height', 'bmi'], 'number'],
+            [['mobile'], 'safe'],
         ];
     }
 
@@ -61,12 +61,13 @@ class BmiSearch extends Bmi
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'user_id' => $this->user_id,
             'weight' => $this->weight,
             'height' => $this->height,
+            'bmi' => $this->bmi,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'mobile', $this->mobile]);
+        $query->andFilterWhere(['like', 'mobile', $this->mobile]);
 
         return $dataProvider;
     }

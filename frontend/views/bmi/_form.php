@@ -12,13 +12,15 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'user_id')->textInput() ?>
 
-    <?= $form->field($model, 'mobile')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'weight')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'height')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'weight')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'mobile')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'bmi')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

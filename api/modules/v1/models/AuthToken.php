@@ -2,6 +2,7 @@
 
 namespace api\modules\v1\models;
 
+use common\models\User;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
@@ -17,6 +18,7 @@ use yii\db\ActiveRecord;
  * @property integer $device_id
  * @property integer $created_at
  * @property integer $updated_at
+ * @property User user
  * @property Device device
  */
 class AuthToken extends ActiveRecord
@@ -83,8 +85,14 @@ class AuthToken extends ActiveRecord
         return $auth->expired_at > time();
     }
 
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
     public function getDevice()
     {
-        return $this->hasOne(Device::className(), ['id' => 'device_id']);
+        return $this->hasOne(Device::className(), ['id' => 'device_id'])
+            ->select(['name']);
     }
 }

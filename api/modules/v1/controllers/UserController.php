@@ -60,11 +60,7 @@ class UserController extends Controller
                 'code' => 1,
                 'msg' => '登录成功',
                 'token' => $auth->access_token,
-                'username' => $user->username,
-                'mobile' => $user->mobile,
-                'device_id' => $auth->device->id,
-                'device_name' => $auth->device->name,
-                'device_salt' => $auth->device->salt,
+                'user' => $auth->user,
                 'device' => $auth->device
             ];
         }
