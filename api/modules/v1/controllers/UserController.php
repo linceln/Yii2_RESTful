@@ -52,8 +52,7 @@ class UserController extends Controller
     public function actionLogin()
     {
         $model = new LoginForm();
-        $model->setAttributes(Yii::$app->request->get());
-        if ($auth = $model->login()) {
+        if ($model->load(Yii::$app->request->get(), '') && $auth = $model->login()) {
             return [
                 'code' => 1,
                 'msg' => '登录成功',

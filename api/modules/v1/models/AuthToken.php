@@ -65,6 +65,11 @@ class AuthToken extends ActiveRecord
         ];
     }
 
+    public static function getAuthToken($user_id)
+    {
+        return self::findOne(['user_id' => $user_id]);
+    }
+
     /**
      * 判断 access_token 是否过期
      * @param $user_id

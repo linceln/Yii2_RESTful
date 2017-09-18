@@ -68,10 +68,20 @@ class LoginForm extends Model
      */
     public function login()
     {
-        if ($this->validate()) {
+        $auth = AuthToken::getAuthToken($this->_user->id);
+
+        if (!$auth) {
+            $auth = new AuthToken();
+            $auth->user_id = $this->_user->id;
+            $auth->access_token = Yii::$app->security->generateRandomString();
+            $auth->expired_at = time() + Yii::$app->params['user.accessTokenExpire'];
+            $auth->device_id = $this->device;
+            $result = $auth->save();
+            if (!$result) {
+                throw new Exception(current($auth->getFirstErrors()));
+            }
+        } else {
             if (!AuthToken::isAccessTokenValid($this->_user->id)) {
-                $auth = new AuthToken();
-                $auth->user_id = $this->_user->id;
                 $auth->access_token = Yii::$app->security->generateRandomString();
                 $auth->expired_at = time() + Yii::$app->params['user.accessTokenExpire'];
                 $auth->device_id = $this->device;
@@ -79,15 +89,14 @@ class LoginForm extends Model
                 if (!$result) {
                     throw new Exception(current($auth->getFirstErrors()));
                 }
-            } else {
-                $auth = AuthToken::findOne(['user_id' => $this->_user->id]);
             }
-            if (Yii::$app->getUser()->login($this->_user)) {
-                return $auth;
-            }
-        } else {
-            return null;
         }
+
+        if (Yii::$app->getUser()->login($this->_user)) {
+            return $auth;
+        }
+
+        return null;
     }
 
     /**
