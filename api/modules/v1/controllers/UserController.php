@@ -36,7 +36,7 @@ class UserController extends Controller
         if ($user = $model->signup()) {
             return [
                 'code' => 1,
-                'msg' => '注册成功',
+                'msg' => '注册成功，快去登录吧～',
                 'username' => $user->username,
                 'mobile' => $user->mobile,
             ];
@@ -52,7 +52,8 @@ class UserController extends Controller
     public function actionLogin()
     {
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->get(), '') && $auth = $model->login()) {
+        if ($model->load(Yii::$app->request->get(), '') && $model->validate()) {
+            $auth = $model->login();
             return [
                 'code' => 1,
                 'msg' => '登录成功',
