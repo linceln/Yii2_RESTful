@@ -2,7 +2,6 @@
 
 namespace api\modules\v1\controllers;
 
-use common\models\User;
 use Yii;
 use common\models\SignupForm;
 use common\models\LoginForm;
@@ -55,13 +54,13 @@ class UserController extends Controller
         $model = new LoginForm();
         $model->setAttributes(Yii::$app->request->get());
         if ($auth = $model->login()) {
-            $user = User::findById($auth->user_id);
+//            $user = User::findById($auth->user_id);
             return [
                 'code' => 1,
                 'msg' => '登录成功',
                 'token' => $auth->access_token,
-                'user' => $auth->user,
-                'device' => $auth->device
+                'user' => $auth->getUser()->select(['username', 'mobile']),
+                'device' => $auth->getDevice()->select('name')
             ];
         }
         return $this->errorMessage($model);

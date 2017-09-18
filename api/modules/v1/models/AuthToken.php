@@ -3,7 +3,6 @@
 namespace api\modules\v1\models;
 
 use common\models\User;
-use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 
@@ -92,7 +91,6 @@ class AuthToken extends ActiveRecord
 
     public function getDevice()
     {
-        return $this->hasOne(Device::className(), ['id' => 'device_id'])
-            ->select(['name']);
+        return $this->hasOne(Device::className(), ['id' => 'device_id']);
     }
 }
