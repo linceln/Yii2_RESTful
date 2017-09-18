@@ -76,7 +76,7 @@ class LoginForm extends Model
             $auth->access_token = Yii::$app->security->generateRandomString();
             $auth->expired_at = time() + Yii::$app->params['user.accessTokenExpire'];
             $auth->device_id = $this->device;
-            $result = $auth->save();
+            $result = $auth->save(false);
             if (!$result) {
                 throw new Exception(current($auth->getFirstErrors()));
             }
@@ -85,7 +85,7 @@ class LoginForm extends Model
                 $auth->access_token = Yii::$app->security->generateRandomString();
                 $auth->expired_at = time() + Yii::$app->params['user.accessTokenExpire'];
                 $auth->device_id = $this->device;
-                $result = $auth->save();
+                $result = $auth->save(false);
                 if (!$result) {
                     throw new Exception(current($auth->getFirstErrors()));
                 }
