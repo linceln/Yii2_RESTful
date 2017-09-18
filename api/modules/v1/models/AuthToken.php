@@ -17,6 +17,7 @@ use yii\db\ActiveRecord;
  * @property integer $device_id
  * @property integer $created_at
  * @property integer $updated_at
+ * @property Device device
  */
 class AuthToken extends ActiveRecord
 {
@@ -80,5 +81,10 @@ class AuthToken extends ActiveRecord
         }
 
         return $auth->expired_at > time();
+    }
+
+    public function getDevice()
+    {
+        return $this->hasOne(Device::className(), ['id' => 'device_id']);
     }
 }
