@@ -2,7 +2,6 @@
 
 namespace api\modules\v1\models;
 
-use common\models\Bmi;
 use common\models\User;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
@@ -20,7 +19,6 @@ use yii\db\ActiveRecord;
  * @property integer $updated_at
  * @property User user
  * @property Device device
- * @property Bmi bmi
  */
 class AuthToken extends ActiveRecord
 {
@@ -94,10 +92,5 @@ class AuthToken extends ActiveRecord
     public function getDevice()
     {
         return $this->hasOne(Device::className(), ['id' => 'device_id']);
-    }
-
-    public function getBmi()
-    {
-        return $this->hasMany(Bmi::className(), ['id' => 'user_id']);
     }
 }

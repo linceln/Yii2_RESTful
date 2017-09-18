@@ -21,6 +21,7 @@ use yii\web\UnauthorizedHttpException;
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
+ * @property Bmi bmi
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -226,5 +227,10 @@ class User extends ActiveRecord implements IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
+    }
+
+    public function getBmi()
+    {
+        return $this->hasMany(Bmi::className(), ['id' => 'user_id']);
     }
 }
