@@ -104,9 +104,6 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        if (!AuthToken::isAccessTokenValid($token)) {
-            throw new UnauthorizedHttpException('Access token is invalid');
-        }
         return static::find()
             ->innerJoinWith('token')
             ->select(['access_token', 'status'])

@@ -70,25 +70,6 @@ class AuthToken extends ActiveRecord
         return self::findOne(['user_id' => $user_id]);
     }
 
-    /**
-     * 判断 access_token 是否过期
-     * @param $user_id
-     * @return bool
-     */
-    public static function isAccessTokenValid($user_id)
-    {
-        $auth = self::find()
-            ->select(['access_token', 'expired_at'])
-            ->where(['user_id' => $user_id])
-            ->one();
-
-        if (!$auth || empty($auth->access_token)) {
-            return false;
-        }
-
-        return $auth->expired_at > time();
-    }
-
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
