@@ -63,6 +63,7 @@ class UserController extends Controller
                     ->asArray()
                     ->one(),
                 'device' => $auth->device,
+                'bmi' => $auth->bmi,
             ];
         }
         return $this->errorMessage($model);
