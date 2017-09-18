@@ -31,6 +31,7 @@ class Bmi extends ActiveRecord
     {
         return [
             [['user_id', 'weight', 'height', 'mobile', 'bmi'], 'required'],
+            [['mobile'], 'unique'],
             [['user_id'], 'integer'],
             [['weight', 'height', 'bmi'], 'number'],
             [['mobile'], 'string', 'max' => 255],
@@ -50,6 +51,18 @@ class Bmi extends ActiveRecord
             'mobile' => 'Mobile',
             'bmi' => 'Bmi',
         ];
+    }
+
+    public function beforeValidate()
+    {
+        if (parent::beforeValidate()) {
+            if ($this->height != 0) {
+                $this->bmi = $this->weight / ($this->height / 100 * $this->height / 100);
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function create($user_id)

@@ -105,8 +105,9 @@ class User extends ActiveRecord implements IdentityInterface
     public static function findIdentityByAccessToken($token, $type = null)
     {
         return static::find()
+            ->alias('u')
             ->innerJoinWith('token')
-            ->select(['access_token', 'status'])
+            ->select(['u.id', 'access_token', 'status'])
             ->where(['access_token' => $token, 'status' => self::STATUS_ACTIVE])
             ->one();
     }
