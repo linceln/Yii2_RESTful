@@ -68,7 +68,7 @@ class LoginForm extends Model
      */
     public function login()
     {
-        $auth = AuthToken::getAuthToken($this->_user->id, $this->device);
+        $auth = AuthToken::getAuthToken($this->_user->id);
 
         if (!$auth) {
             $auth = new AuthToken();

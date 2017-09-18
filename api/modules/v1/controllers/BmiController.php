@@ -11,9 +11,20 @@ namespace api\modules\v1\controllers;
 use Yii;
 use common\models\Bmi;
 use yii\rest\Controller;
+use yii\helpers\ArrayHelper;
+use yii\filters\auth\HttpBearerAuth;
 
 class BmiController extends Controller
 {
+    public function behaviors()
+    {
+        return ArrayHelper::merge(parent::behaviors(), [
+            'authenticator' => [
+                'class' => HttpBearerAuth::className(),
+            ]
+        ]);
+    }
+
     public function actionCreate()
     {
         $model = new Bmi();

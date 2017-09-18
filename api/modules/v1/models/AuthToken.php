@@ -65,9 +65,9 @@ class AuthToken extends ActiveRecord
         ];
     }
 
-    public static function getAuthToken($user_id, $device_id)
+    public static function getAuthToken($user_id)
     {
-        return self::findOne(['user_id' => $user_id, 'device_id' => $device_id]);
+        return self::findOne(['user_id' => $user_id]);
     }
 
     /**
