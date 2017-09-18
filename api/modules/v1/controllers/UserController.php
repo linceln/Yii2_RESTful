@@ -59,8 +59,8 @@ class UserController extends Controller
                 'code' => 1,
                 'msg' => '登录成功',
                 'token' => $auth->access_token,
-                'user' => $auth->getUser()->select(['username', 'mobile']),
-                'device' => $auth->getDevice()->select('name')
+                'user' => $auth->getUser()->select(['username', 'mobile'])->asArray()->one(),
+                'device' => $auth->getDevice()->select(['name'])->asArray()->one(),
             ];
         }
         return $this->errorMessage($model);
