@@ -54,13 +54,18 @@ class UserController extends Controller
         $model = new LoginForm();
         $model->setAttributes(Yii::$app->request->get());
         if ($auth = $model->login()) {
-//            $user = User::findById($auth->user_id);
             return [
                 'code' => 1,
                 'msg' => '登录成功',
                 'token' => $auth->access_token,
-                'user' => $auth->getUser()->select(['username', 'mobile'])->asArray()->one(),
-                'device' => $auth->getDevice()->select(['name'])->asArray()->one(),
+                'user' => $auth->getUser()
+                    ->select(['username', 'mobile'])
+                    ->asArray()
+                    ->one(),
+                'device' => $auth->getDevice()
+                    ->select(['id', 'name'])
+                    ->asArray()
+                    ->one(),
             ];
         }
         return $this->errorMessage($model);
