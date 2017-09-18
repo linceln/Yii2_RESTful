@@ -62,10 +62,7 @@ class UserController extends Controller
                     ->select(['username', 'mobile'])
                     ->asArray()
                     ->one(),
-                'device' => $auth->getDevice()
-                    ->select(['id', 'name'])
-                    ->asArray()
-                    ->one(),
+                'device' => $auth->device,
             ];
         }
         return $this->errorMessage($model);
