@@ -53,21 +53,12 @@ class Bmi extends ActiveRecord
         ];
     }
 
-    public function beforeValidate()
-    {
-        if (parent::beforeValidate()) {
-            if ($this->height != 0) {
-                $this->bmi = $this->weight / ($this->height / 100 * $this->height / 100);
-            }
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public function create($user_id)
     {
         $this->user_id = $user_id;
+        if ($this->height != 0) {
+            $this->bmi = $this->weight / ($this->height / 100 * $this->height / 100);
+        }
         return $this->save();
     }
 }
