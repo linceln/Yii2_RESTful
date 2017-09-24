@@ -38,10 +38,12 @@ class SiteController extends Controller
 
     public function actionTest()
     {
+        $bmis = Bmi::a();
         return [
             'code' => 1,
             'msg' => 'Request is OK.',
-            'data' => Bmi::a(),
+            'count' => count($bmis),
+            'data' => $bmis,
         ];
     }
 
