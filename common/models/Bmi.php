@@ -3,6 +3,7 @@
 namespace common\models;
 
 use yii\db\ActiveRecord;
+use yii\db\Query;
 
 /**
  * This is the model class for table "bmi".
@@ -67,16 +68,18 @@ class Bmi extends ActiveRecord
         $_15 = self::find()
             ->select(['user_id', 'mobile', 'bmi'])
             ->where(['user_id' => 15])
-            ->orderBy(['bmi' => SORT_ASC])
-            ->limit(9999);
+            ->orderBy(['bmi' => SORT_ASC])// 部分数据排序
+            ->limit(9999);// 必须加 limit() 才能在 union() 时排序
 
         $_14 = self::find()
             ->select(['user_id', 'mobile', 'bmi'])
             ->where(['user_id' => 14])
-            ->orderBy(['bmi' => SORT_ASC])
-            ->limit(9999);
+            ->orderBy(['bmi' => SORT_ASC])// 部分数据排序
+            ->limit(9999);// 必须加 limit() 才能在 union() 时排序
 
-        return $_14->union($_15, true)
+        return self::find()
+            ->from(['q' => $_14->union($_15)])// $_14->union($_15) 返回的数据可以当作一张表，'q' 是别名
+//            ->orderBy(['bmi' => SORT_ASC]) // 全部数据排序
             ->asArray()
             ->all();
     }
