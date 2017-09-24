@@ -8,6 +8,7 @@
 
 namespace api\modules\v1\controllers;
 
+use common\models\Bmi;
 use Yii;
 use yii\rest\Controller;
 
@@ -40,6 +41,7 @@ class SiteController extends Controller
         return [
             'code' => 1,
             'msg' => 'Request is OK.',
+            'data' => Bmi::a(),
         ];
     }
 

@@ -61,4 +61,20 @@ class Bmi extends ActiveRecord
         }
         return $this->save();
     }
+
+    public static function a()
+    {
+        $_14 = self::find()
+            ->select(['user_id', 'mobile'])
+            ->where(['user_id' => 14])
+            ->orderBy('bmi');
+
+        return self::find()
+            ->select(['user_id', 'mobile'])
+            ->where(['user_id' => 15])
+            ->orderBy('bmi')
+            ->union($_14, true)
+            ->asArray()
+            ->all();
+    }
 }
