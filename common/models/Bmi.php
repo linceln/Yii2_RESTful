@@ -74,7 +74,7 @@ class Bmi extends ActiveRecord
             ->where(['user_id' => 14])
             ->orderBy('bmi');
 
-        $_14->union($_15, true)
+        return $_14->union($_15, true)
             ->asArray()
             ->all();
     }
