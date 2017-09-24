@@ -65,14 +65,14 @@ class Bmi extends ActiveRecord
     public static function a()
     {
         $_15 = self::find()
-            ->select(['user_id', 'mobile', 'bmi'])
+            ->select(['id', 'user_id', 'mobile', 'bmi'])
             ->where(['user_id' => 15])
-            ->orderBy('bmi');
+            ->orderBy('id');
 
         $_14 = self::find()
-            ->select(['user_id', 'mobile', 'bmi'])
+            ->select(['id', 'user_id', 'mobile', 'bmi'])
             ->where(['user_id' => 14])
-            ->orderBy('bmi');
+            ->orderBy('id');
 
         return $_14->union($_15, true)
             ->asArray()
