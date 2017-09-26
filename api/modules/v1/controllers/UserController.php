@@ -60,8 +60,9 @@ class UserController extends Controller
                 'token' => $auth->access_token,
                 'username' => $auth->user->username,
                 'mobile' => $auth->user->mobile,
-                'device' => $auth->device->name,
-                'bmi' => $auth->user->bmi->bmi,
+                'device_id' => $auth->device->id,
+                'device_name' => $auth->device->name,
+                'bmi' => $auth->user->bmi ?: 0,
             ];
         }
         return $this->errorMessage($model);

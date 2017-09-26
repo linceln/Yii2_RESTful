@@ -229,6 +229,6 @@ class User extends ActiveRecord implements IdentityInterface
 
     public function getBmi()
     {
-        return $this->hasMany(Bmi::className(), ['user_id' => 'id']);
+        return $this->hasOne(Bmi::className(), ['user_id' => 'id']);
     }
 }
