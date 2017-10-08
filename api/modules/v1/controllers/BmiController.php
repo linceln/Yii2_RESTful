@@ -21,6 +21,9 @@ class BmiController extends Controller
         return ArrayHelper::merge(parent::behaviors(), [
             'authenticator' => [
                 'class' => HttpBearerAuth::className(),
+                'optional' => [
+                    'average'
+                ]
             ]
         ]);
     }
@@ -41,5 +44,14 @@ class BmiController extends Controller
                 'msg' => current($model->getFirstErrors())
             ];
         }
+    }
+
+    public function actionAverage()
+    {
+        return [
+            'code' => 1,
+            'message' => 'Successful',
+            'average' => Bmi::averageBmi()->average,
+        ];
     }
 }

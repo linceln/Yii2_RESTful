@@ -27,7 +27,7 @@ return [
         'class' => 'yii\rest\UrlRule',
         'controller' => 'v1/bmi',
         'extraPatterns' => [
-
+            'GET average' => 'average',
         ]
     ],
 ];

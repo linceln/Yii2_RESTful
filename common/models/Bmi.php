@@ -2,7 +2,6 @@
 
 namespace common\models;
 
-use api\modules\v1\models\AuthToken;
 use yii\db\ActiveRecord;
 
 /**
@@ -17,6 +16,9 @@ use yii\db\ActiveRecord;
  */
 class Bmi extends ActiveRecord
 {
+
+    public $average;
+
     /**
      * @inheritdoc
      */
@@ -61,6 +63,13 @@ class Bmi extends ActiveRecord
             $this->bmi = $this->weight / ($this->height / 100 * $this->height / 100);
         }
         return $this->save();
+    }
+
+    public static function averageBmi()
+    {
+        return self::find()
+            ->select(['AVG(bmi) AS average'])// 平均值
+            ->one();
     }
 
     public static function testUnion()
