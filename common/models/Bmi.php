@@ -2,7 +2,9 @@
 
 namespace common\models;
 
+use yii\base\UserException;
 use yii\db\ActiveRecord;
+use yii\web\NotFoundHttpException;
 
 /**
  * This is the model class for table "bmi".
@@ -11,7 +13,6 @@ use yii\db\ActiveRecord;
  * @property integer $user_id
  * @property string $weight
  * @property string $height
- * @property string $mobile
  * @property number $bmi
  */
 class Bmi extends ActiveRecord
@@ -24,7 +25,7 @@ class Bmi extends ActiveRecord
      */
     public static function tableName()
     {
-        return 'bmi';
+        return '{{%bmi}}';
     }
 
     /**
@@ -33,11 +34,10 @@ class Bmi extends ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'weight', 'height', 'mobile', 'bmi'], 'required'],
-            [['mobile'], 'unique'],
+            [['user_id', 'weight', 'height', 'bmi'], 'required'],
+            [['user_id'], 'unique'],
             [['user_id'], 'integer'],
             [['weight', 'height', 'bmi'], 'number'],
-            [['mobile'], 'string', 'max' => 255],
         ];
     }
 
@@ -51,25 +51,58 @@ class Bmi extends ActiveRecord
             'user_id' => 'User ID',
             'weight' => 'Weight',
             'height' => 'Height',
-            'mobile' => 'Mobile',
             'bmi' => 'Bmi',
         ];
+    }
+
+    public function beforeValidate()
+    {
+        if (parent::beforeValidate()) {
+            if ($this->height != 0) {
+                $this->bmi = $this->weight / ($this->height / 100 * $this->height / 100);
+            }
+            return true;
+        }
+    }
+
+    /**
+     * @return BmiQuery
+     */
+    public static function find()
+    {
+        return new BmiQuery(get_called_class());
     }
 
     public function create($user_id)
     {
         $this->user_id = $user_id;
-        if ($this->height != 0) {
-            $this->bmi = $this->weight / ($this->height / 100 * $this->height / 100);
-        }
         return $this->save();
     }
 
     public static function averageBmi()
     {
         return self::find()
-            ->select(['AVG(bmi) AS average'])// 平均值
+            ->addSelectAverageBmi()
             ->one();
+    }
+
+    public static function updateBmi($bmi_id, $data)
+    {
+        $bmi = self::find()
+            ->andWhereIdentifiedUser()
+            ->andWhereBmiId($bmi_id)
+            ->one();
+
+        if (!$bmi) {
+            throw new NotFoundHttpException();
+        }
+
+        if ($bmi && $bmi->load($data, '')) {
+            $bmi->save();
+            return true;
+        } else {
+            throw new UserException(current($bmi->getFirstErrors()));
+        }
     }
 
     public static function testUnion()

@@ -22,7 +22,7 @@ class BmiController extends Controller
             'authenticator' => [
                 'class' => HttpBearerAuth::className(),
                 'optional' => [
-                    'average'
+//                    'average'
                 ]
             ]
         ]);
@@ -38,12 +38,23 @@ class BmiController extends Controller
                 'msg' => '保存成功',
                 'bmi' => $model->bmi,
             ];
-        } else {
-            return [
-                'code' => 0,
-                'msg' => current($model->getFirstErrors())
-            ];
         }
+        return [
+            'code' => 0,
+            'msg' => current($model->getFirstErrors())
+        ];
+    }
+
+    public function actionUpdate()
+    {
+        $bmi_id = Yii::$app->request->get('id');
+        $data = Yii::$app->request->getBodyParams();
+        Bmi::updateBmi($bmi_id, $data);
+        return [
+            'code' => 1,
+            'message' => 'Successful',
+        ];
+
     }
 
     public function actionAverage()
