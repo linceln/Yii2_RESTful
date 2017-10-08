@@ -8,6 +8,7 @@
 
 namespace api\modules\v1\controllers;
 
+use api\modules\v1\models\AuthToken;
 use common\models\Bmi;
 use Yii;
 use yii\rest\Controller;
@@ -38,12 +39,19 @@ class SiteController extends Controller
 
     public function actionTest()
     {
-        $bmis = Bmi::a();
+//        $bmis = Bmi::testUnion();
+//        return [
+//            'code' => 1,
+//            'msg' => 'Request is OK.',
+//            'count' => count($bmis),
+//            'data' => $bmis,
+//        ];
+
+
         return [
             'code' => 1,
-            'msg' => 'Request is OK.',
-            'count' => count($bmis),
-            'data' => $bmis,
+            'message' => 'Successful',
+            'auth' => AuthToken::testWith(),
         ];
     }
 

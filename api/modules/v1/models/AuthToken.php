@@ -72,11 +72,25 @@ class AuthToken extends ActiveRecord
 
     public function getUser()
     {
-        return $this->hasOne(User::className(), ['id' => 'user_id']);
+        return $this->hasOne(User::className(), ['id' => 'user_id'])
+            ->select(['id', 'username', 'updated_at']);
     }
 
     public function getDevice()
     {
-        return $this->hasOne(Device::className(), ['id' => 'device_id']);
+        return $this->hasOne(Device::className(), ['id' => 'device_id'])
+            ->select(['id', 'name']);
+    }
+
+    public static function testWith()
+    {
+        return self::find()
+            ->select(['id', 'user_id', 'device_id', 'access_token'])
+            ->with([
+                'user.bmi',
+                'device',
+            ])
+            ->asArray()
+            ->all();
     }
 }

@@ -2,8 +2,8 @@
 
 namespace common\models;
 
+use api\modules\v1\models\AuthToken;
 use yii\db\ActiveRecord;
-use yii\db\Query;
 
 /**
  * This is the model class for table "bmi".
@@ -63,7 +63,7 @@ class Bmi extends ActiveRecord
         return $this->save();
     }
 
-    public static function a()
+    public static function testUnion()
     {
         $_15 = self::find()
             ->select(['user_id', 'mobile', 'bmi'])
