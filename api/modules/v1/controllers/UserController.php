@@ -52,7 +52,7 @@ class UserController extends Controller
     public function actionLogin()
     {
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->get(), '') && $model->validate()) {
+        if ($model->load(Yii::$app->request->post(), '') && $model->validate()) {
             $auth = $model->login();
             return [
                 'code' => 1,
