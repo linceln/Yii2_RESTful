@@ -32,8 +32,7 @@ class UserController extends Controller
     public function actionSignup()
     {
         $model = new SignupForm();
-        $model->setAttributes(Yii::$app->request->post());
-        if ($user = $model->signup()) {
+        if ($model->load(Yii::$app->request->post(), '') && $user = $model->signup()) {
             return [
                 'code' => 1,
                 'msg' => '注册成功，快去登录吧～',
