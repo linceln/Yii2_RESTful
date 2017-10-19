@@ -12,7 +12,7 @@ use api\modules\v1\models\AuthToken;
  */
 class LoginForm extends Model
 {
-    public $username;
+    public $mobile;
     public $password;
     public $device;
 
@@ -36,7 +36,7 @@ class LoginForm extends Model
     public function rules()
     {
         return [
-            [['username', 'password', 'device'], 'required'],
+            [['mobile', 'password', 'device'], 'required'],
             ['password', 'validatePassword'],
 
             [['device'], 'required', 'on' => 'api'],
@@ -100,14 +100,14 @@ class LoginForm extends Model
     }
 
     /**
-     * Finds user by [[username]]
+     * Finds user by [[mobile]]
      *
      * @return User|null
      */
     protected function getUser()
     {
         if ($this->_user === null) {
-            $this->_user = User::findByUsername($this->username);
+            $this->_user = User::findByMobile($this->mobile);
         }
 
         return $this->_user;

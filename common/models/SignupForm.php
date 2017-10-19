@@ -9,8 +9,8 @@ use yii\base\Model;
  */
 class SignupForm extends Model
 {
-    public $username;
     public $mobile;
+    public $username;
     public $password;
     public $passwordRepeat;
 

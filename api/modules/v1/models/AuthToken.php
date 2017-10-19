@@ -78,7 +78,7 @@ class AuthToken extends ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id'])
-            ->select(['id', 'username', 'updated_at']);
+            ->select(['id', 'mobile', 'username', 'updated_at']);
     }
 
     public function getDevice()
