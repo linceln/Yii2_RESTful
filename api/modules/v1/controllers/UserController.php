@@ -2,6 +2,7 @@
 
 namespace api\modules\v1\controllers;
 
+use common\models\User;
 use Yii;
 use common\models\SignupForm;
 use common\models\LoginForm;
@@ -59,12 +60,24 @@ class UserController extends Controller
                 'token' => $auth->access_token,
                 'username' => $auth->user->username,
                 'mobile' => $auth->user->mobile,
-                'device_id' => $auth->device->id,
-                'device_name' => $auth->device->name,
-                'bmi' => $auth->user->bmi ?: 0,
+//                'device_id' => $auth->device->id,
+//                'device_name' => $auth->device->name,
+//                'bmi' => $auth->user->bmi ?: 0,
             ];
         }
         return $this->errorMessage($model);
+    }
+
+    /**
+     * 获取全部用户的信息
+     * @return array
+     */
+    public function actionIndex()
+    {
+        return [
+            'code' => 1,
+            'users' => User::index(),
+        ];
     }
 
     /**

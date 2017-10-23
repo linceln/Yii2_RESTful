@@ -241,4 +241,12 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return $this->hasOne(Bmi::className(), ['user_id' => 'id']);
     }
+
+    public static function index()
+    {
+        return self::find()
+            ->select(['id', 'username', 'mobile', 'status'])
+            ->asArray()
+            ->all();
+    }
 }
