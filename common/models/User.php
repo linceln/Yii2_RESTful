@@ -7,7 +7,6 @@ use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
-use yii\web\UnauthorizedHttpException;
 
 /**
  * User model
@@ -240,13 +239,5 @@ class User extends ActiveRecord implements IdentityInterface
     public function getBmi()
     {
         return $this->hasOne(Bmi::className(), ['user_id' => 'id']);
-    }
-
-    public static function index()
-    {
-        return self::find()
-            ->select(['id', 'username', 'mobile', 'status'])
-            ->asArray()
-            ->all();
     }
 }

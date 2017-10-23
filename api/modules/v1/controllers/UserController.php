@@ -2,8 +2,8 @@
 
 namespace api\modules\v1\controllers;
 
-use common\models\User;
 use Yii;
+use api\modules\v1\models\User;
 use common\models\SignupForm;
 use common\models\LoginForm;
 use yii\base\Model;
