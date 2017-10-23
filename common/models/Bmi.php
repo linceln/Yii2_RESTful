@@ -97,8 +97,7 @@ class Bmi extends ActiveRecord
             throw new NotFoundHttpException();
         }
 
-        if ($bmi && $bmi->load($data, '')) {
-            $bmi->save();
+        if ($bmi && $bmi->load($data, '' && $bmi->save())) {
             return true;
         } else {
             throw new UserException(current($bmi->getFirstErrors()));
