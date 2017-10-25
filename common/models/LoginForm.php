@@ -70,32 +70,22 @@ class LoginForm extends Model
     {
         $auth = AuthToken::getAuthToken($this->_user->id);
 
-        if (!$auth) {
+        if(!$auth){
+            // 没有登录记录
             $auth = new AuthToken();
-            $auth->user_id = $this->_user->id;
+        }
+        if($auth->expired_at < time()){
+            // 登录过期
             $auth->access_token = Yii::$app->security->generateRandomString();
             $auth->expired_at = time() + Yii::$app->params['user.accessTokenExpire'];
-            $auth->device_id = $this->device;
-            $result = $auth->save(false);
-            if (!$result) {
-                throw new Exception(current($auth->getFirstErrors()));
-            }
-        } else {
-            if ($auth->expired_at < time()) {
-                $auth->access_token = Yii::$app->security->generateRandomString();
-                $auth->expired_at = time() + Yii::$app->params['user.accessTokenExpire'];
-            }
-            $auth->device_id = $this->device;
-            $result = $auth->save(false);
-            if (!$result) {
-                throw new Exception(current($auth->getFirstErrors()));
-            }
         }
+        $auth->user_id = $this->_user->id;
+        $auth->device_id = $this->device;
+        $auth->save();
 
-        if (Yii::$app->getUser()->loginByAccessToken($auth->access_token)) {
+        if(Yii::$app->user->loginByAccessToken($auth->access_token)){
             return $auth;
         }
-
         return null;
     }
 

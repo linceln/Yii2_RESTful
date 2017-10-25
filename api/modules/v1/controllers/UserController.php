@@ -52,17 +52,13 @@ class UserController extends Controller
     public function actionLogin()
     {
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post(), '') && $model->validate()) {
-            $auth = $model->login();
+        if ($model->load(Yii::$app->request->post(), '') && $auth = $model->login()) {
             return [
                 'code' => 1,
                 'msg' => '登录成功',
                 'token' => $auth->access_token,
                 'username' => $auth->user->username,
                 'mobile' => $auth->user->mobile,
-//                'device_id' => $auth->device->id,
-//                'device_name' => $auth->device->name,
-//                'bmi' => $auth->user->bmi ?: 0,
             ];
         }
         return $this->errorMessage($model);

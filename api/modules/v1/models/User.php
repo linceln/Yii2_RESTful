@@ -21,6 +21,7 @@ class User extends \common\models\User
     public static function index()
     {
         return self::find()
+            ->with('bmi')
             ->selectUser()
             ->asArray()
             ->all();
