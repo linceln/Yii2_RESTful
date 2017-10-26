@@ -68,24 +68,29 @@ class LoginForm extends Model
      */
     public function login()
     {
+        if (!$this->validate()) {
+            return null;
+        }
+
         $auth = AuthToken::getAuthToken($this->_user->id);
 
-        if(!$auth){
+        if (!$auth) {
             // 没有登录记录
             $auth = new AuthToken();
         }
-        if($auth->expired_at < time()){
+        if ($auth->expired_at < time()) {
             // 登录过期
             $auth->access_token = Yii::$app->security->generateRandomString();
             $auth->expired_at = time() + Yii::$app->params['user.accessTokenExpire'];
         }
         $auth->user_id = $this->_user->id;
         $auth->device_id = $this->device;
-        $auth->save();
+        $auth->save(false);
 
-        if(Yii::$app->user->loginByAccessToken($auth->access_token)){
+        if (Yii::$app->user->loginByAccessToken($auth->access_token)) {
             return $auth;
         }
+
         return null;
     }
 
