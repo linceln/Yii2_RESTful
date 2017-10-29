@@ -66,13 +66,16 @@ class UserController extends Controller
 
     /**
      * 获取全部用户的信息
+     * @param $page integer
      * @return array
      */
-    public function actionIndex()
+    public function actionIndex($page)
     {
+        $dataProvider = User::index($page);
         return [
             'code' => 1,
-            'users' => User::index(),
+            'totalPage' => $dataProvider->getPagination()->getPageCount(),
+            'users' => $dataProvider->getModels(),
         ];
     }
 

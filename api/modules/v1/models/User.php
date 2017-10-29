@@ -8,6 +8,8 @@
 
 namespace api\modules\v1\models;
 
+use yii\data\ActiveDataProvider;
+
 class User extends \common\models\User
 {
     /**
@@ -18,12 +20,29 @@ class User extends \common\models\User
         return new UserQuery(get_called_class());
     }
 
-    public static function index()
+    public static function index($page)
     {
-        return self::find()
+        $query = self::find()
             ->with('bmi')
-            ->selectUser()
-            ->asArray()
-            ->all();
+            ->selectUser();
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'page' => $page,
+                'pageSize' => 10,
+                'totalCount' => $query->count(),
+            ],
+            'sort' => [
+                'defaultOrder' => [
+                    'status' => SORT_DESC,
+                    'updated_at' => SORT_DESC,
+                    'created_at' => SORT_DESC,
+                    'username' => SORT_ASC
+                ]
+            ]
+        ]);
+
+        return $dataProvider;
     }
 }
