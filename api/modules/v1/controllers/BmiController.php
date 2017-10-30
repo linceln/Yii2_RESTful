@@ -22,7 +22,6 @@ class BmiController extends Controller
             'authenticator' => [
                 'class' => HttpBearerAuth::className(),
                 'optional' => [
-//                    'average'
                 ]
             ]
         ]);
@@ -39,17 +38,12 @@ class BmiController extends Controller
                 'bmi' => $model->bmi,
             ];
         }
-        return [
-            'code' => 0,
-            'msg' => current($model->getFirstErrors())
-        ];
     }
 
-    public function actionUpdate()
+    public function actionUpdate($id)
     {
-        $bmi_id = Yii::$app->request->get('id');
         $data = Yii::$app->request->getBodyParams();
-        Bmi::updateBmi($bmi_id, $data);
+        Bmi::updateBmi($id, $data);
         return [
             'code' => 1,
             'message' => 'Successful',
