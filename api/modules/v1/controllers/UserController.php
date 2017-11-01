@@ -75,7 +75,7 @@ class UserController extends Controller
         return [
             'code' => 1,
             'pages' => $dataProvider->pagination->pageCount,
-            'user' => $dataProvider,
+            'user' => $dataProvider->query,
         ];
     }
 
