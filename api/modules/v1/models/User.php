@@ -22,10 +22,8 @@ class User extends \common\models\User
 
     public static function index($page)
     {
-        $query = self::find()
-            ->selectUser()
-            ->joinWithBmi();
-//        return $query->asArray()->all();
+        $query = self::find();
+
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
@@ -42,6 +40,10 @@ class User extends \common\models\User
                 ]
             ]
         ]);
+
+        $query->selectUser()
+            ->joinWithBmi();
+
         return $dataProvider;
     }
 }
