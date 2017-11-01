@@ -15,6 +15,13 @@ class UserQuery extends ActiveQuery
 
     public function selectUser()
     {
-        return self::addSelect(['id', 'username', 'avatars', 'mobile', 'status']);
+        return self::alias('u')
+            ->addSelect(['u.id', 'u.username', 'u.avatars', 'u.mobile', 'u.status']);
+    }
+
+    public function joinWithBmi()
+    {
+        return self::joinWith("bmi b")
+            ->addSelect(['b.weight', 'b.height', 'b.bmi']);
     }
 }
