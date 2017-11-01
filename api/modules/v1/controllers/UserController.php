@@ -75,12 +75,7 @@ class UserController extends Controller
         return [
             'code' => 1,
             'pages' => $dataProvider->pagination->pageCount,
-            'users' => ArrayHelper::toArray($dataProvider->models, [
-                'api\modules\v1\models\User' => [
-                    'id',
-                    'bmi'
-                ]
-            ]),
+            'users' => $dataProvider->models
         ];
     }
 
