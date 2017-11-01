@@ -24,7 +24,7 @@ class UserQuery extends ActiveQuery
 //        return self::with("bmi b")
 //            ->addSelect(['b.user_id', 'b.weight', 'b.height', 'b.bmi']);
 
-        return self::with([
+        return self::joinWith([
             "bmi" => function ($query) {
                 $query->select(['user_id', 'weight', 'height', 'bmi']);
             }
