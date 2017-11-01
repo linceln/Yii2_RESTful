@@ -9,7 +9,6 @@
 namespace api\modules\v1\models;
 
 use yii\data\ActiveDataProvider;
-use yii\helpers\ArrayHelper;
 
 class User extends \common\models\User
 {
