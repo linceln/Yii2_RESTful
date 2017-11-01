@@ -72,10 +72,13 @@ class UserController extends Controller
     public function actionIndex($page)
     {
         $dataProvider = User::index($page);
-//        var_dump(ArrayHelper::toArray($dataProvider->models));
-//        die;
+        var_dump(ArrayHelper::toArray($dataProvider->models[0]));
+        die;
         foreach ($dataProvider->models as $key => $value) {
+            var_dump('~~~~~~~~~~start~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+            var_dump($key);
             var_dump($value);
+            var_dump('~~~~~~~~~~end~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
         }
         die;
         return [
