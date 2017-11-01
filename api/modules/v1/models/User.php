@@ -26,8 +26,6 @@ class User extends \common\models\User
             ->selectUser()
             ->joinWithBmi();
 
-        var_dump($query->createCommand()->getRawSql());die;
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
@@ -44,7 +42,7 @@ class User extends \common\models\User
                 ]
             ]
         ]);
-
+        var_dump($dataProvider);die;
         return $dataProvider;
     }
 }
