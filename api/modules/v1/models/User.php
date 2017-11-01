@@ -25,23 +25,23 @@ class User extends \common\models\User
         $query = self::find()
             ->selectUser()
             ->joinWithBmi();
-        return $query->asArray()->all();
-//        $dataProvider = new ActiveDataProvider([
-//            'query' => $query,
-//            'pagination' => [
-//                'page' => $page,
-//                'pageSize' => 10,
-//                'totalCount' => $query->count(),
-//            ],
-//            'sort' => [
-//                'defaultOrder' => [
-//                    'status' => SORT_DESC,
-//                    'updated_at' => SORT_DESC,
-//                    'created_at' => SORT_DESC,
-//                    'username' => SORT_ASC
-//                ]
-//            ]
-//        ]);
-//        return $dataProvider;
+//        return $query->asArray()->all();
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'page' => $page,
+                'pageSize' => 10,
+                'totalCount' => $query->count(),
+            ],
+            'sort' => [
+                'defaultOrder' => [
+                    'status' => SORT_DESC,
+                    'updated_at' => SORT_DESC,
+                    'created_at' => SORT_DESC,
+                    'username' => SORT_ASC
+                ]
+            ]
+        ]);
+        return $dataProvider;
     }
 }
