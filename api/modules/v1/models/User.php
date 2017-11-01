@@ -26,6 +26,8 @@ class User extends \common\models\User
             ->selectUser()
             ->joinWithBmi();;
 
+            var_dump($query->all());die;
+
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
