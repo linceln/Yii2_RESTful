@@ -26,22 +26,22 @@ class User extends \common\models\User
             ->selectUser()
             ->joinWithBmi();
         return $query->asArray();
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-            'pagination' => [
-                'page' => $page,
-                'pageSize' => 10,
-                'totalCount' => $query->count(),
-            ],
-            'sort' => [
-                'defaultOrder' => [
-                    'status' => SORT_DESC,
-                    'updated_at' => SORT_DESC,
-                    'created_at' => SORT_DESC,
-                    'username' => SORT_ASC
-                ]
-            ]
-        ]);
-        return $dataProvider;
+//        $dataProvider = new ActiveDataProvider([
+//            'query' => $query,
+//            'pagination' => [
+//                'page' => $page,
+//                'pageSize' => 10,
+//                'totalCount' => $query->count(),
+//            ],
+//            'sort' => [
+//                'defaultOrder' => [
+//                    'status' => SORT_DESC,
+//                    'updated_at' => SORT_DESC,
+//                    'created_at' => SORT_DESC,
+//                    'username' => SORT_ASC
+//                ]
+//            ]
+//        ]);
+//        return $dataProvider;
     }
 }
