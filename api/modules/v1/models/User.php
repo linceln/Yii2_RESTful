@@ -42,7 +42,8 @@ class User extends \common\models\User
                 ]
             ]
         ]);
-        var_dump($dataProvider);die;
+        var_dump($dataProvider->models);
+        die;
         return $dataProvider;
     }
 }
