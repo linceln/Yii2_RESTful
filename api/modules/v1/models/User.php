@@ -24,7 +24,7 @@ class User extends \common\models\User
     {
         $query = self::find()
             ->selectUser()
-            ->with('bmi');
+            ->joinWith('bmi');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
