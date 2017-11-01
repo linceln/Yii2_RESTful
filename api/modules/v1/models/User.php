@@ -25,9 +25,8 @@ class User extends \common\models\User
     {
         $query = self::find()
             ->selectUser()
-            ->joinWithBmi();;
-
-            var_dump(ArrayHelper::toArray($query->all()));die;
+            ->joinWithBmi()
+            ->asArray();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
