@@ -25,6 +25,6 @@ class UserQuery extends ActiveQuery
             "bmi" => function ($query) {
                 $query->select(['user_id', 'weight', 'height', 'bmi']);
             }
-        ]);
+        ])->addSelect("bmi");
     }
 }
