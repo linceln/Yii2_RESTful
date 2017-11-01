@@ -9,6 +9,7 @@
 namespace api\modules\v1\models;
 
 use yii\data\ActiveDataProvider;
+use yii\helpers\ArrayHelper;
 
 class User extends \common\models\User
 {
@@ -26,7 +27,7 @@ class User extends \common\models\User
             ->selectUser()
             ->joinWithBmi();;
 
-//            var_dump($query->asArray()->all());die;
+            var_dump(ArrayHelper::toArray($query->all()));die;
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
