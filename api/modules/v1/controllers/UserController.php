@@ -74,8 +74,8 @@ class UserController extends Controller
         $dataProvider = User::index($page);
         return [
             'code' => 1,
-            'pages' => $dataProvider->getPagination()->getPageCount(),
-            'user' => $dataProvider->getModels(),
+            'pages' => $dataProvider->pagination->pageCount,
+            'user' => $dataProvider->models,
         ];
     }
 
@@ -87,7 +87,7 @@ class UserController extends Controller
     {
         return [
             'code' => 0,
-            'msg' => current($model->getFirstErrors()),
+            'msg' => current($model->firstErrors),
         ];
     }
 }
