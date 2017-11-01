@@ -72,7 +72,7 @@ class UserController extends Controller
     public function actionIndex($page)
     {
         $dataProvider = User::index($page);
-        var_dump($dataProvider->query->asArray()->all());die;
+        var_dump($dataProvider->models->asArray());die;
         return [
             'code' => 1,
             'pages' => $dataProvider->pagination->pageCount,
