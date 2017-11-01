@@ -26,7 +26,7 @@ class UserQuery extends ActiveQuery
 
         return self::with([
             "bmi" => function ($query) {
-                $query->select(['b.weight', 'b.height', 'b.bmi']);
+                $query->select(['weight', 'height', 'bmi']);
             }
         ]);
     }
