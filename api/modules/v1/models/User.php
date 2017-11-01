@@ -23,8 +23,8 @@ class User extends \common\models\User
     public static function index($page)
     {
         $query = self::find()
-            ->with('bmi')
-            ->selectUser();
+            ->selectUser()
+            ->with('bmi');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
