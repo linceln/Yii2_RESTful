@@ -25,7 +25,7 @@ class User extends \common\models\User
         $query = self::find()
             ->selectUser()
             ->joinWithBmi();
-
+        return $query->asArray();
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [

@@ -74,8 +74,8 @@ class UserController extends Controller
         $dataProvider = User::index($page);
         return [
             'code' => 1,
-            'pages' => $dataProvider->pagination->pageCount,
-            'user' => $dataProvider->query,
+//            'pages' => $dataProvider->pagination->pageCount,
+            'user' => $dataProvider,
         ];
     }
 
