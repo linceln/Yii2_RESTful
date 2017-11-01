@@ -22,7 +22,9 @@ class User extends \common\models\User
 
     public static function index($page)
     {
-        $query = self::find();
+        $query = self::find()
+            ->selectUser()
+            ->joinWithBmi();;
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -40,9 +42,6 @@ class User extends \common\models\User
                 ]
             ]
         ]);
-
-        $query->selectUser()
-            ->joinWithBmi();
 
         return $dataProvider;
     }
