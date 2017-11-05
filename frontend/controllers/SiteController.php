@@ -69,9 +69,9 @@ class SiteController extends Controller
 
     public function actionDb()
     {
-        $model = User::find()->all();
+        $users = User::find()->all();
         return $this->render('db',[
-            'model' => $model,
+            'users' => $users,
         ]);
     }
 
