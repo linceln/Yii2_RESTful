@@ -9,6 +9,7 @@ return [
     [
         'class' => 'yii\rest\UrlRule',
         'controller' => 'v1/user',
+        'pluralize' => false,
         'extraPatterns' => [
             'POST login' => 'login',
             'POST signup' => 'signup',
@@ -17,6 +18,7 @@ return [
     [
         'class' => 'yii\rest\UrlRule',
         'controller' => 'v1/site',
+        'pluralize' => false,
         'extraPatterns' => [
             'POST auto-pull' => 'auto-pull',
             'GET test' => 'test',
