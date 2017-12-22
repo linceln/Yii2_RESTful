@@ -38,19 +38,11 @@ class SiteController extends Controller
 
     public function actionTest()
     {
-//        $bmis = Bmi::testUnion();
-//        return [
-//            'code' => 1,
-//            'msg' => 'Request is OK.',
-//            'count' => count($bmis),
-//            'data' => $bmis,
-//        ];
-
-
+        echo 'Xdebug';
         return [
             'code' => 1,
             'message' => 'Successful',
-            'auth' => AuthToken::testWith(),
+//            'auth' => AuthToken::testWith(),
         ];
     }
 
