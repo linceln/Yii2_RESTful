@@ -38,11 +38,10 @@ class SiteController extends Controller
 
     public function actionTest()
     {
-        echo 'Xdebug';
         return [
             'code' => 1,
             'message' => 'Successful',
-//            'auth' => AuthToken::testWith(),
+            'auth' => AuthToken::testWith(),
         ];
     }
 
